@@ -1,0 +1,166 @@
+{% extends 'mythings/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="banner">
+  <div class="header">
+    <div class="header-inner container clear">
+      <input type="checkbox" id="navigation-toggle-checkbox" name="navigation-toggle-checkbox" class="navigation-toggle-checkbox none">
+      <label for="navigation-toggle-checkbox" class="navigation-toggle-label" onclick>
+        <span class="navigation-toggle-label-inner">
+          <span class="sr">Navigation</span>
+        </span>
+      </label>
+      <div class="navigation">
+        <ul class="navigation-menu">
+          <li class="navigation-item"><a href="{% url 'mythings.views.home_page' %}">Home</a></li>
+          <li class="navigation-item"><a href="#about">About</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.portfolio_list' %}">Portfolio</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.post_list' %}">Blog</a></li>
+          <li class="navigation-item"><a href="#contact">Contact</a></li>
+      </div>
+    </div>
+</div>
+
+  <div class="container-margin">
+    <div class="banner-inner">
+      <h1 class="banner-lead">
+        <span class="banner-lead-1">Michelle Hiland</span>
+      </h1>
+    </div>
+  </div>
+</div>
+
+<!-- quote -->
+
+  <div class="container">
+    <div class="col-lg-12">
+	<div id="row">
+        <div class="services-block-inner container">
+          <div class="content-block-inner text-center">
+            <h3>The challenges we overcome define us, I choose to run up moutains because it sets me free.</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+<!-- about me section -->
+
+<div class="container-margin">
+<div class="row">
+  <div id="about" class="content-block about-block">
+    <div class="about-block-inner container">
+      <div class="animate-block content-block-inner text-center">
+      </div>
+	<hr class="section-heading-spacer">
+      <div class="animate-block about-content clear">
+        <div class="what-we-do-block col-tablet-6">
+          <h3 class="h3">Meet Me</h3>
+          <p>
+          I am a young professional with a background in Operation & Information Technology Management from the University of Colorado at Boulder. My business degree gives me a unique insight into the challenges and solutions faced by companies and an understanding of how processes work. I am determined, hard-working, enthusiastic and a true go-getter.</p>
+          </p>
+          <p>
+          As a developer and graphic designer I have assisted start-ups and non-profits in gaining an online presence and enjoy both creating and developing modern attractive websites and applications.
+          </p>
+          <p>
+          When I am not working I am enjoying the outdoors in beautiful Colorado. I love trail running, mountain biking, skiing, ice skating, photography and learning new trends. Check out more of my passions by <button><a href="{% url 'mythings.views.passion_list' %}">Clicking Here!</a></button>      
+          </p>
+        </div>
+        <div>
+            <img width="450px" height="auto" class="img-responsive" src="{% static 'mythings/img/professional.jpg' %}">
+        </div>
+        <hr class="section-heading-spacer">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+        
+<!-- services section -->
+
+<div class="container-margin">
+ <div class="col-lg-3">
+<div class="row">
+  <div id="services" >
+      <ul class="services-list clear">
+        <li class="service-item">
+          <h3 class="service-item-heading service-icon service-icon-performance">Website Design</h3>
+        </li>
+        <li class="service-item">
+          <h3 class="service-item-heading service-icon service-icon-customer">Web Development</h3>
+        </li>
+        <li class="service-item">
+          <h3 class="service-item-heading service-icon service-icon-it">Cloud Computing</h3>
+        </li>
+        <li class="service-item">
+          <h3 class="service-item-heading service-icon service-icon-digital">Social Media Management</h3>
+        </li>  
+      </ul>
+  </div>
+ </div>
+</div>
+</div>
+
+<hr class="section-heading-spacer">
+
+<!--contact section-->
+<div class="container-margin">
+<div id="contact">
+  <div class="contact-block-inner container">
+   <div class="row">
+    <div class="clear">
+      <div class="contact-block-content col-tablet-6">
+        <h2 class="h2 uppercase">Michelle Hiland</h2>
+        <p>
+          Please contact me if you are interested in any of my services or have any questions! 
+        </p>
+        <ul class="contact-list">
+          <li><span class="icon contact-icon contact-icon-email"><a href="mailto:mhfreelancer247@mhcompany.com?subject=General%20Enquiry&anp;body=">mhfreelancer@mycompany.com</a></span></li>
+        </ul>
+      </div>
+      <div class="contact-block-form col-tablet-6">
+        <h2 class="h2">Contact</h2>
+        <p>
+          Feel free to write me a message below and please leave a way for me to get back to you!
+        </p>
+        <form class="contact-form">
+          <fieldset>
+            <legend class="sr">Contact Me</legend>
+            
+            <div method="post" action="/contact/" class="field-group">
+              <label for="message" class="sr">Message</label>
+              <textarea placeholder="Message" class="field" name="message" id="message" cols="30" rows="7"></textarea>
+            </div>
+            <div class="text-right">
+              <input type="submit" class="button button-primary contact-submit" value="Send">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+   <!-- footer -->
+
+      <div class="footer-column col-tablet-4">
+        <ul class="footer-social-list icon-list-inline">
+          <li class="navigation-item-social"><a  href="https://www.linkedin.com/pub/michelle-a-hiland/41/bba/21b"><i class="fa fa-linkedin fa-2x"></i><span class="sr">LinkedIn</span></a></li>
+          <li class="navigation-item-social"><a href="https://www.facebook.com/michelleahiland"><i class="fa fa-facebook fa-2x"></i><span class="sr">Facebook</span></a></li>
+          <li class="navigation-item-social"><a href="https://instagram.com/michellehiland/"><i class="fa fa-instagram fa-2x"></i><span class="sr">Instagram</span></a></li>
+          <li class="navigation-item-social"><a href="https://www.pinterest.com/mhiland/"><i class="fa fa-pinterest-p fa-2x"></i><span class="sr"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!--<script src="js/vendor/wow.js"></script>
+<script src="js/default.js"></script>
+
+</body>
+</html>-->

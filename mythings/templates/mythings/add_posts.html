@@ -1,0 +1,35 @@
+{% extends 'mythings/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+ <div class="row">
+  <div class="col-xs-12">
+    <div class="login">
+        {% if user.is_authenticated %}
+        <p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'django.contrib.auth.views.logout' %}">Log out</a>)</small></p>
+        {% else %}
+        <a href="{% url 'django.contrib.auth.views.login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+        {% endif %}
+    </div>
+  </div>
+ </div>
+
+ <div class="row">
+  <div class="col-xs-12">
+   <legend>New Post:</legend>
+    <form enctype="multipart/form-data" action="/mythings/add/posts/" method="post" class="add-post-form">{% csrf_token %}
+      <label for="title">Title: </label>
+        <input class="add-post-input" id="title" type="text" name="title">
+      <label for="description">Description: </label>
+        <textarea class="field" id="description" type="text" name="description" cols="60" rows="12"></textarea>
+      <label for="get_image">Picture: </label>
+        <input class="add-post-input" id="get_image" type="file" name="get_image">
+      <label for="image_date">Image Date: </label>
+        <input class="add-post-input" id="image_date" type="date" name="image_date">
+     <label for="tag">Tags: </label>
+        <input class="add-post-input" id="tag" type="text" name="tag">
+        <input class="submit-button" type="submit" value="Submit">
+    </form>
+   </div>
+ </div>
+{% endblock %}

@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+myv
+django.db.backends.mysql
+/static
+.DS_Store

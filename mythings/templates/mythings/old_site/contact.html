@@ -1,0 +1,10 @@
+{% block content %}
+    <legend>Give Me a Shout:</legend>
+    <form enctype="multipart/form-data" action="/mythings/contact/" method="post">{% csrf_token %}
+	<div class="form-group col-lg-12">
+        <label for="message">Message: </label>
+        <input id="message" type="text" name="message">
+	</div>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

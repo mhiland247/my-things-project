@@ -1,0 +1,58 @@
+{% extends 'mythings/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="banner_blog">
+  <div class="header">
+    <div class="header-inner container clear">
+      <input type="checkbox" id="navigation-toggle-checkbox" name="navigation-toggle-checkbox" class="navigation-toggle-checkbox none">
+      <label for="navigation-toggle-checkbox" class="navigation-toggle-label" onclick>
+        <span class="navigation-toggle-label-inner">
+          <span class="sr">Navigation</span>
+        </span>
+      </label>
+      <div class="navigation">
+        <ul class="navigation-menu">
+          <li class="navigation-item"><a href="{% url 'mythings.views.home_page' %}">Home</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.home_page' %}#about">About</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.portfolio_list' %}">Portfolio</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.post_list' %}">Blog</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.home_page' %}#contact">Contact</a></li>
+      </div>
+    </div>
+</div>
+
+  <div class="container">
+    <div class="banner-inner">
+      <h1 class="banner-lead">
+        <span class="banner-lead-1">My Blog</span>
+      </h1>
+    </div>
+  </div>
+</div>
+
+{% for post in posts %}
+<div class="row">
+  <div id="about" class="content-block about-block">
+    <div class="about-block-inner container">
+      <div class="animate-block content-block-inner text-center">
+      </div>
+        <hr class="section-heading-spacer">
+      <div class="animate-block about-content clear">
+        <div class="what-we-do-block col-tablet-6">
+	<a href="{% url 'post_detail' post.pk %}"> <h3 class="h3"> {{ post.title }}</h2></a>
+	  <p><small> {{post.published_date}} </small></p>
+	  <p> {{ post.description|linebreaks }} </p>
+	  <a href="{% url 'post_detail' post.pk %}">Read more</a>
+        </div>
+        <div>
+            <img width="500px" height="auto" class="img-responsive" src="{{ post.get_image }}">
+        </div>
+        <hr class="section-heading-spacer">
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+{% endfor %} 
+{% endblock %}

@@ -1,0 +1,331 @@
+/* Global */
+
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.navbar{
+  margin-bottom:0;
+}
+
+.blue-bg {
+    background-color: #32c5d2;
+}
+
+/* Header Block */
+
+#heading-div {
+    background: url('../img/header_pic.jpg') 0 0 no-repeat;;
+    height: 590px;
+    width: auto;  
+    background-size: cover;
+    color: #fff;
+    opacity: 1;
+}
+
+#heading-title {
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 285px;
+  margin-left: 65px;
+  font-size: 48px;
+}
+
+#heading-sub {
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 65px;
+  font-size: 32px;
+}
+
+/* Quote Block */
+
+.quote-div{
+}
+
+.quote-text{
+    height:100%;
+    margin-top:200px;
+    margin-bottom: 200px;
+    font-size: 36px;
+    color: #a0a0a0;
+    font-style:italic;
+    font-family:Georgia;
+    text-align:center;
+}
+
+/* About Block */
+.about-content{
+  margin-top:160px;
+  margin-bottom: 160px;
+  
+}
+
+.about-row{
+  padding-top:160px;
+  padding-bottom:160px;
+}
+
+.blue-bg {
+    background-color: #32c5d2;
+}
+
+.about-title{
+  font-size:24px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align:center;
+  color: #333333;
+}
+
+.about-text{
+  font-size: 17px;
+  color: #fff;
+  text-align: center;
+  margin-left: 20px;
+  margin-right:20px;2;
+}
+.about-pic{
+  margin-right: auto;
+  margin-left: auto;
+  width: 75%;
+  /*width: 450px;*/
+  height: auto;
+}
+
+#passion-link{
+  text-decoration: none;
+  border-bottom:1px dashed #333333;
+  color:#ffffff;
+  font-weight: bold;
+  padding: 2px;
+}
+
+/* Services Block */
+
+.services-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  color: #333333;
+  font-size: 32px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+}
+
+.services-sub {
+  font-weight: 400;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 80px;
+  display: block;
+  text-decoration: underline;
+}
+
+.social-shape{
+  color: #32c5d2;
+  margin-top: 80px;
+  margin-bottom: 120px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+#fb {
+  transform: translate(110px, 65px);
+}
+
+#tw {
+  transform: translate(15px, 45px);
+}
+
+#pt {
+  transform: translate(-20px, -15px);
+}
+
+#ig {
+  transform: translate(5px, -30px);
+}
+
+#lk {
+  transform: translate(35px, -15px);
+}
+
+#yt {
+  transform:translate(-10px, 45px);
+}
+
+.services-img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 50%;
+  width: 50%;
+  text-align: center;
+}
+
+.services-text-small {
+  font-weight: 300;
+  font-size: 16px;
+  color: #333333;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.services-text {
+  font-weight: 400;
+  font-size: 20px;
+  color: #33333;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.services-content {
+  margin-bottom: 500px;
+}
+
+/* Contact Block */
+
+.contact-text {
+  margin: auto;
+  margin-top: 40px;
+  color: white;
+  font-size: 17px;
+  text-align: center;
+  
+}
+
+.contact-form{
+   text-align: center;
+   margin: auto;
+   margin-top: 40px;
+}
+
+.contact-icons{
+   text-align: center;
+   margin: auto;
+   color:#ffffff;
+   margin-top: 40px;
+   margin-bottom: 40px;
+}
+
+.contact-icons a{
+  color: #ffffff;
+  margin:25px;
+  font-size: 28px;
+}
+
+#message{
+  height:200px;
+  border: solid 1px;
+  color: #333333;
+}
+
+.submit-button {
+  text-decoration: none;
+  border: solid 1px;
+  color: #333333;
+  background-color: white;
+  text-align: left;
+}
+
+ul{
+  list-style-type: none;
+}
+  
+
+/* Social Media Icons */
+
+.social-ul {
+    list-style-type: none;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 120px;    
+}
+
+/* Portfolio Block */
+.grey-bg {
+  background-color: #eeeee;
+}
+
+.tag-background {
+  margin-top: 50px;
+}
+
+.post-heading {
+  font-weight: 700;
+  color: #333333;
+  font-size: 36px;
+  text-transform: uppercase;
+}
+
+.post-hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 75%;
+  border-color: #333333;
+}
+
+.post-content {
+  margin-top: 180px;
+  margin-bottom: 180px;
+}
+
+.post-title {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333333;
+  font-size: 28px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.post-description {
+  font-weight: 300;
+  color: #333333;
+  text-align: center;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+ /* margin-top: 25%;*/
+}
+
+.post-img {
+  width: 50%;
+  height: 25%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+
+/* Add Post Form */
+
+.login {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.add-post-form {
+  padding: 20px;
+  border: 1px solid black;
+  font-size: 16px;
+  font-weight: 400;
+  margin: auto;
+}
+
+/*.add-post-input {
+  width:375px;
+  display: block;
+  height: 25px;
+}*/

@@ -1,0 +1,47 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Michelle</title>
+
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="shortcut icon" href="{% static 'mythings/img/favicon.png' %}">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'mythings/css/style2.css' %}">
+
+</head>
+
+<body>
+ <!--<div class="banner">
+  <div class="header">
+    <div class="header-inner container clear">
+      <input type="checkbox" id="navigation-toggle-checkbox" name="navigation-toggle-checkbox" class="navigation-toggle-checkbox none">
+      <label for="navigation-toggle-checkbox" class="navigation-toggle-label" onclick>
+        <span class="navigation-toggle-label-inner">
+          <span class="sr">Navigation</span>
+        </span>
+      </label>
+      <div class="navigation">
+        <ul class="navigation-menu">
+          <li class="navigation-item"><a href="{% url 'mythings.views.home_page' %}">Home</a></li>
+          <li class="navigation-item"><a href="#about">About</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.portfolio_list' %}">Portfolio</a></li>
+          <li class="navigation-item"><a href="{% url 'mythings.views.post_list' %}">Blog</a></li>
+          <li class="navigation-item"><a href="#contact">Contact</a></li>
+      </div>
+    </div>
+</div>-->
+{% block content %}
+{% endblock %}
+
+</body>
+
+<script src="{% static 'mythings/js/js/vendor/wow.js' %}"></script>
+<script src="{% static 'mythings/js/js/default.js' %}"></script>
+
+</html>

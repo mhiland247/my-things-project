@@ -1,0 +1,272 @@
+{% extends 'mythings/base.html' %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static 'mythings/css/bootstrap.min.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'mythings/css/blog-home.css' %}">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation 
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+		<a class="navbar-brand" href="{% url 'mythings.views.add_posts' %}">+</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="{% url 'mythings.views.home_page' %}">Website Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'mythings.views.post_list' %}">Blog Home</a>
+                    </li>
+                </ul>
+            </div>-->
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+</nav> -->
+<br>
+<br>
+<br>
+    <!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the business-casual.css file. -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="tagline">Michelle Hiland<small id="text"> Lastest Posts </small></h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+            
+            <!--Freatured Blog Entries-->
+            <hr>
+	    <div class="col-md-6">
+              <div class="row">
+   	{% for post in latest_blog_list %}
+            <!--<div class="col-sm-4">-->
+		<div class="well well-sm" style="border: 2px solid teal">
+		<h2 id="title">{{ post.title }}</h2>
+		<img class="img-rounded img-responsive img-center" id="imgblog" src="{{ post.get_image }}">
+		<p>{{ post.description|truncatewords:10}}</p><a class="btn btn-primary" href="{% url 'post_detail' post.pk %}">Read More </a>
+		</div>
+            </div>
+        </div>
+   	{% endfor %}
+        <!-- /.row -->
+
+        <hr>
+            
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                {% for post in posts %}
+                <!-- First Blog Post -->
+                <h2 id="title">
+                    {{post.title}}
+                </h2>
+                <!--<p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>-->
+                <p id="text"><span id="text" class="glyphicon glyphicon-time"></span> {{ post.published_date}}</p>
+                <hr>
+                <img id="imgid" class="img-responsive" src="{{ post.get_image }}" alt="">
+                <hr>
+                <h5 id="text">{{ post.description|linebreaks }}</h5>
+                <!--<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                <p id="text"> Tags: {% for t in post.tags.all %} <button><a href="{% url 'tag_list' t.tag %}"> {{ t.tag }} </a></button> {% endfor %} </p>
+                <hr>
+                {% endfor %}
+                <!-- Second Blog Post -->
+		{% for passion in passions %}
+                <h2 id="title">
+                    {{passion.title}}
+                </h2>
+                <!--<p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>-->
+                <p><span class="glyphicon glyphicon-time"></span> {{ passion.published_date}}</p>
+                <hr>
+                <img id="imgid" class="img-responsive" src="{{ passion.get_image }}" alt="">
+                <hr>
+                <h5 id="text">{{ passion.description|linebreaks }} </h5>
+                <!--<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>-->
+                <p id="tags">{% for post in posts %} Tags: {% for t in post.tags.all %} <button type="button" class="btn btn-info"><a href="{% url 'tag_list' t.tag %}"> {{ t.tag }} </a> </button>{% endfor %} {% endfor %}</p>
+                <hr>
+                {% endfor %}
+
+		<!-- Second Blog Post -->
+                {% for info in infos %}
+                <h2 id="title">
+                    {{info.title}}
+                </h2>
+                <!--<p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>-->
+                <p><span class="glyphicon glyphicon-time"></span> {{ info.published_date}}</p>
+                <hr>
+                <img id="imgid" class="img-responsive" src="{{ info.get_image }}" alt="">
+                <hr>
+                <h5 id="text">{{ info.description|linebreaks }} </h5>
+                <!--<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p id="tags"> Tags: {% for t in post.tags.all %} <a href="{% url 'tag_list' t.tag %}"> {{ t.tag }} </a> {% endfor %} </p>-->
+                <hr>
+                {% endfor %}
+		
+		<!-- Tavel Blog list -->
+		{% for travel in travels %}
+                <h2 id="title">
+                    {{travel.title}}
+                </h2>
+                <!--<p class="lead">
+                    by <a href="index.php">Start Bootstrap</a>
+                </p>-->
+                <p><span class="glyphicon glyphicon-time"></span> {{ travel.published_date}}</p>
+                <hr>
+                <img id="imgid" class="img-responsive" src="{{ travel.get_image }}" alt="">
+                <hr>
+                <h5 id="text">{{ travel.description|linebreaks }} </h5>
+                <!--<a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <p id="tags"> Tags: {% for t in post.tags.all %} <a href="{% url 'tag_list' t.tag %}"> {{ t.tag }} </a> {% endfor %} </p>-->
+                <hr>
+                {% endfor %}
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+
+                <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Blog Search</h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+
+                <!-- Blog Categories Well -->
+                <div class="well">
+                    <h4>Blog Categories</h4>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><button class="btn btn-success"><a id="text" href="{% url 'mythings.views.infographic_list' %}">Infographics</a></button>
+                                </li>
+				<br>
+                                <li><button class="btn btn-primary"> <a id="text" href="{% url 'mythings.views.passion_list' %}">Passions</a></button>
+                                </li>
+				<br>
+                                <li><button class="btn btn-danger"> <a id="text" href="{% url 'mythings.views.travel_list' %}">Travel</a></button>
+                                </li>
+                                <li><a href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                        <div class="col-lg-6">
+                            <ul class="list-unstyled">
+                                <li><button class="btn btn-warning"<a id="text" href="#">Running</a></button>
+                                </li>
+                                <li><a href="#"></a>
+                                </li>
+                                <li><a href="#"></a>
+                                </li>
+                                <li><a href="#"></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- /.col-lg-6 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+
+                <!-- Side Widget Well -->
+                <div class="well">
+                    <h4>About Me</h4>
+                    <p>I love to trail run, ski, bike, ice skate and adventure.</p>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="{% static 'mythings/js/jquery.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{% static 'mythings/js/bootstrap.min.js' %}"></script>
+
+</body>
+
+</html>
