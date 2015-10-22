@@ -25,15 +25,15 @@ body, html {
 }
 
 #heading-title {
-  font-weight: 700;
+  font-weight: 600;
   color: #FFFFFF;
   margin-top: 285px;
   margin-left: 65px;
-  font-size: 48px;
+  font-size: 52px;
 }
 
 #heading-sub {
-  font-weight: 400;
+  font-weight: 300;
   color: #ffffff;
   margin-left: 65px;
   font-size: 32px;
@@ -72,7 +72,7 @@ body, html {
 }
 
 .about-title{
-  font-size:24px;
+  font-size: 26px;
   margin-bottom: 20px;
   font-weight: 600;
   text-transform: uppercase;
@@ -81,11 +81,12 @@ body, html {
 }
 
 .about-text{
-  font-size: 17px;
+  font-size: 16px;
   color: #fff;
   text-align: center;
+  line-height: 200%;
   margin-left: 20px;
-  margin-right:20px;2;
+  margin-right: 20px;
 }
 .about-pic{
   margin-right: auto;
@@ -110,24 +111,35 @@ body, html {
   text-transform: uppercase;
   text-align: center;
   color: #333333;
-  font-size: 32px;
-  margin-top: 80px;
-  margin-bottom: 40px;
+  font-size: 38px;
+  margin-top: 140px;
+  margin-bottom: 140px;
 }
 
 .services-sub {
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
-  font-size: 18px;
-  margin-bottom: 80px;
+  font-size: 26px;
   display: block;
   text-decoration: underline;
+  padding-top: 120px;
+  color: #333333;
 }
 
-.social-shape{
+.sub-services, a:link {
+    color: #333333;
+    background-color: transparent;
+}
+
+.sub-services, a:hover {
+    color: #32c5d2;
+    background-color: transparent;
+}   
+
+/*.social-shape{
   color: #32c5d2;
-  margin-top: 80px;
-  margin-bottom: 120px;
+  margin-top: 130px;
+  margin-bottom: 140px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -156,11 +168,11 @@ body, html {
 
 #yt {
   transform:translate(-10px, 45px);
-}
+}*/
 
 .services-img {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
   height: 50%;
@@ -169,28 +181,34 @@ body, html {
 }
 
 .services-text-small {
-  font-weight: 300;
+  font-weight: 400;
   font-size: 16px;
   color: #333333;
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+  line-height: 200%;
 }
 
 .services-text {
   font-weight: 400;
-  font-size: 20px;
-  color: #33333;
+  font-size: 24px;
+  color: #333333;
   text-align: center;
   margin-right: auto;
   margin-left: auto;
+  /*margin-bottom: 30px;*/
 }
 
 .services-content {
-  margin-bottom: 500px;
+  margin-bottom: 200px;
 }
 
 /* Contact Block */
+
+.contact-div {
+  height: 350px;
+}
 
 .contact-text {
   margin: auto;
@@ -207,17 +225,24 @@ body, html {
    margin-top: 40px;
 }
 
+.thanks-div {
+  padding-top: 120px;
+  text-align: center;
+  font-size: 18px;
+  color: #333333;
+  font-weight: 300px;
+}
+
 .contact-icons{
    text-align: center;
    margin: auto;
-   color:#ffffff;
    margin-top: 40px;
    margin-bottom: 40px;
 }
 
 .contact-icons a{
   color: #ffffff;
-  margin:25px;
+  margin: 20px;
   font-size: 28px;
 }
 
@@ -235,7 +260,7 @@ body, html {
   text-align: left;
 }
 
-ul{
+ul { 
   list-style-type: none;
 }
   
@@ -250,53 +275,54 @@ ul{
 }
 
 /* Portfolio Block */
-.grey-bg {
-  background-color: #eeeee;
-}
 
 .tag-background {
   margin-top: 50px;
 }
 
 .post-heading {
+  font-family: 'Libre Baskerville', serif;
   font-weight: 700;
-  color: #333333;
-  font-size: 36px;
+  color: #232323;
+  font-size: 32px;
   text-transform: uppercase;
-}
-
-.post-hr {
-  margin-top: 40px;
-  margin-bottom: 40px;
-  width: 75%;
-  border-color: #333333;
-}
-
-.post-content {
-  margin-top: 180px;
-  margin-bottom: 180px;
 }
 
 .post-title {
-  font-weight: 600;
-  text-transform: uppercase;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
   color: #333333;
-  font-size: 28px;
+  font-size: 32px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 
 .post-description {
-  font-weight: 300;
-  color: #333333;
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  color: #474747;
   text-align: center;
   font-size: 18px;
+  line-height: 200%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 40px;
   margin-top: 20px;
- /* margin-top: 25%;*/
+  width: 80%;
+}
+
+.image-date {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: 350px;
+  font-size: 10px;
+  color: #5b5b5b
 }
 
 .post-img {
@@ -304,11 +330,23 @@ ul{
   height: 25%;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 25px;
-  margin-bottom: 25px;
 }
 
+.img-big {
+  width: auto;
+  height: auto;
+  margin-right: auto;
+  margin-left: auto;
+}
 
+.tag-border {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.post-divider {
+  border-bottom: 5px solid #32c5d2;  
+}
 /* Add Post Form */
 
 .login {

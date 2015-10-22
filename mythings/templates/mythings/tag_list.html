@@ -7,23 +7,37 @@
      <div class="post-heading"> {{ tag }} </div>
   </div>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=497290923708792";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <!-- Blog list -->
 {% for post in posts %}
 <div class="row">
- <div class="post-content">
 
-   <div class="col-md-6">
-      <a href="{% url 'post_detail_name' post.url_name %}"> <div class="post-title"> {{ post.title }}</div></a>
-      <div class="post-description"> {{ post.description|linebreaks }} </div>
-   </div>
-
-   <div class="col-md-6">
-      <img class="img-responsive post-img" src="{{ post.get_image }}">
-   </div>
-
+  <div class="col-xs-2">
   </div>
 
-  <hr class="post-hr"></hr>
- </div>
+   <div class="col-xs-8">
+     <div class="tag-border">
+      <a href="{% url 'post_detail_name' post.url_name %}"> <div class="post-title"> {{ post.title }}</div></a>
+      <img class="img-responsive post-img" src="{{ post.get_image }}">
+      <div class="image-date"> {{post.image_date}}</div>
+      <div class="post-description"> {{ post.description|linebreaks }} </div>
+      <div data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+     </div>
+    <hr class="post-divider"></hr>
+   </div>
+
+  <div class="col-xs-2">
+  </div>
+
+</div>
 {% endfor %}
+
 {% endblock %}

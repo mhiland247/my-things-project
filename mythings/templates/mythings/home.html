@@ -56,7 +56,6 @@
         
       <div id="portfolio" class="col-xs-12">
         <div class="services-title">MY PORTFOLIO</div>
-        <div><a class="services-sub" href="{% url 'mythings.views.tag_list' tag='portfolio' %}">View More</a></div>
       </div>
       
     </div>
@@ -66,17 +65,16 @@
         
         <div class="col-xs-12 col-md-4">
           <div class="services-text">Website Design</div>
-            <div class="services-img"><img class="img-responsive" src="{% static 'mythings/img/web.jpg' %}"></div>
+            <div class="services-img"><img class="img-responsive" src="{% static 'mythings/img/website_design_art.png' %}"></div>
             <div class="services-text-small">
-              I design the layout of each website based on a discussion of needs and preferences. I set up the domain anme and host services for each website I create.
-              <a href="http://amyshouseforgirls.org/">Visit Site</a>
+              I design the layout of each website based on a discussion of needs and preferences. I set up the domain name and host services for each website I create.
             </div>
         </div>
       
         <div class="col-xs-12 col-md-4">
           <div class="services-text">Social Media Management</div>
         
-          <div class="social-shape">
+          <!--<div class="social-shape">
             <span>
               <i id="fb" class="fa fa-facebook fa-3x"></i>
               <i id="tw" class="fa fa-twitter fa-3x"></i>
@@ -85,7 +83,8 @@
               <i id="lk" class="fa fa-linkedin fa-3x"></i>
               <i id="yt" class="fa fa-youtube fa-3x"></i>
             </span>
-          </div>
+          </div>-->
+	  <div class="services-img"><img class="img-responsive" src="{% static 'mythings/img/social_design.png' %}"></div>
           <div class="services-text-small">
             I create posts, images and videos for all social media platforms and find relevant articles and information to aid the personalized content.
 	   </div>
@@ -93,11 +92,17 @@
       
       <div class="col-xs-12 col-md-4">
         <div class="services-text">Graphic Design</div>
-        <div class="services-img"><img class="img-responsive" src="{% static 'mythings/img/graphic.jpg' %}"></div>
+        <div class="services-img"><img class="img-responsive" src="{% static 'mythings/img/graphic_design_art.png' %}"></div>
          <div class="services-text-small">
             I create logos, infographics, page layouts, icons and edit photos for websites, marketing strategies and advertising needs.
          </div>
       </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div><a class="services-sub" href="{% url 'mythings.views.tag_list' tag='portfolio' %}">Check out some of my work!</a></div>
+      </div>
+    </div>
       
       <!--services-content-->
       </div>
@@ -109,36 +114,41 @@
   <div class="row blue-bg">
     
     <div class="col-xs-12">
-        
-      <div id="contact" class="contact-text"> Please <b>Contact me</b> with your contact info here or send me an email at mhfreelancer@mycompany.com</div>
-      
-          <form id="contact-post" enctype="multipart/form-data" method="post" action="/contact/" class="contact-form">  {% csrf_token %}
-	     <div id="the_post">
-                <label for="message" class="sr"></label>
-                  <textarea id="message" type="text" class="field" name="message" cols="80" rows="18"></textarea>
-                  <div id="results"></div> <!-- errors go here -->
-                  <div class="text_right">
-                    <input type="submit" class="submit-button" value="Submit">
-                  </div>
-		   <br>
-		  <div>
-        	    <ul class="thanks-list"id="thanks">
-                      {% for post in all_posts %}
-                        <li>
-                          <strong>{{ post.results }}</strong> 
-                          <em>{{ post.created_date }}</em> 
-                       </li>
-                      {% endfor %}
-                    </ul>
-    		</div>
-	      </div>
-       	  </form>
 
+     <!--div container for contact form-->
+      <div class="contact-div">
+	
+         <div class="contact-text"> Please <b>Contact me</b> with your contact info here or send me an email at mhfreelancer@mycompany.com</div>
+       <!-- form div -->
+	 <div id="contact">
+            <form id="contact-post" enctype="multipart/form-data" method="post" action="/contact/" class="contact-form">  {% csrf_token %}
+	       <div id="the_post">
+                  <label for="message" class="sr"></label>
+                    <textarea id="message" type="text" class="field" name="message" cols="80" rows="18"></textarea>
+                    <div id="results"></div> <!-- errors go here -->
+                    <div class="text_right">
+                      <input id="submit-hide" type="submit" class="submit-button" value="Submit">
+                    </div>
+		</div>
+	    </form>
+	  </div>
+
+	<!-- thank div -->
+	 <div class="thanks-div" id="thanks">
+          {% for post in all_posts %}
+            <strong>{{ post.results }}</strong> 
+            <em>{{ post.created_date }}</em> 
+           {% endfor %}
+	</div>
+      
+      <!--div contanier for contact -->
+      </div>
     <!-- column -->      
     </div>
   <!-- row -->  
   </div>
   
+
   <div class="row blue-bg">
     
     <div class="col-xs-12">

@@ -19,8 +19,14 @@ $(function() {
             success : function(json) {
                 $('#message').val(''); // remove the value from the input
                 console.log(json); // log the returned json to the console
-                $("#thanks").prepend("<li><strong>"+json.result+"</strong> - <span> "+json.created_date+
-                    "</span> </li>");
+                $('#contact').hide();
+		//$("#message").css('visibility', 'hidden');
+ 		//$("#submit-hide").css('visibility', 'hidden');
+		//$("#contact").css('visibility', 'hidden');
+ 		//$('#submit-hide').hide();
+		//$('#contact').hide();
+                $("#thanks").prepend("<div><strong>"+json.result+"</strong> - <span> "+json.created_date+
+                    "</span> </div>");
                 console.log("success"); // another sanity check
             },
             // handle a non-successful response
