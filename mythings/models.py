@@ -1,5 +1,4 @@
 import urllib.parse
-
 from django.db import models
 from django.utils import timezone
 
@@ -56,12 +55,4 @@ class ContactEntry(models.Model):
 
     def __str__(self):
         return self.message
-    
-'''class BlogSearchListView(BlogListView):
-    """
-    Display a Blog List page filtered by the search query.
-    """
-    paginate_by = 10
 
-    def get_queryset(self):
-        result = super(BlogSearchListView, self).get_queryset()'''

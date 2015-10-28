@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mythings',
+    'admin_exporter',
 )
 
 MIDDLEWARE_CLASSES = (

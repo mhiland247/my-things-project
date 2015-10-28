@@ -212,10 +212,11 @@ body, html {
 
 .contact-text {
   margin: auto;
-  margin-top: 40px;
-  color: white;
-  font-size: 17px;
+  margin-top: 60px;
+  color: #ffffff;
+  font-size: 20px;
   text-align: center;
+  font-weight: 300px;
   
 }
 
