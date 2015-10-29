@@ -12,7 +12,10 @@ from django.template import RequestContext
 
 # Create your views here.
 def home_page(request):
-    return render(request, 'mythings/home.html')
+    return render(request, 'mythings/michelle/home.html')
+
+def landing_page(request):
+    return render(request, 'mythings/greatideations/index.html')
 
 @csrf_protect
 #@login_required
@@ -34,7 +37,7 @@ def add_posts(request):
         return redirect('mythings.views.post_detail', post.pk)
     else:
         post = Post()
-    return render(request, 'mythings/add_posts.html', {'post': post})
+    return render(request, 'mythings/michelle/add_posts.html', {'post': post})
 
 def handle_uploaded_file(f,n):
 
@@ -45,11 +48,11 @@ def handle_uploaded_file(f,n):
 def post_detail_name(request, name):
     for post in Post.objects.all():
         if post.url_name == name:
-            return render(request, 'mythings/post_detail.html', {'post': post})
+            return render(request, 'mythings/michelle/post_detail.html', {'post': post})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    return render(request, 'mythings/post_detail.html', {'post': post})
+    return render(request, 'mythings/michelle/post_detail.html', {'post': post})
 
 def tag_list(request, tag=None): #browser sends request for page, django receives request and creates request obj about the request, tag is a kwarg-returned as dict 'tag':tag key:value
     if tag:
@@ -57,13 +60,13 @@ def tag_list(request, tag=None): #browser sends request for page, django receive
     else:
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
         tag = "Blog"
-    return render(request, 'mythings/tag_list.html', {'posts': posts, 'tag': tag.title()})
+    return render(request, 'mythings/michelle/tag_list.html', {'posts': posts, 'tag': tag.title()})
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     #latest_blog_list = Post.objects.order_by('-published_date')[:2]
     #context = {'latest_blog_list': latest_blog_list}
-    return render(request, 'mythings/myblog.html', {'posts': posts})
+    return render(request, 'mythings/michelle/myblog.html', {'posts': posts})
 
 @requires_csrf_token
 def contact_post(request):

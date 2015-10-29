@@ -9,6 +9,6 @@ urlpatterns = [
     url(r'^tag/(?P<tag>.*)/$', views.tag_list, name='tag_list'), 		
     url(r'post/list/$', views.post_list, name='post_list'),
     url(r'contact/$', views.contact_post, name='contact_post'),
-    #url(r'thanks/$', views.thanks, name='thanks'),
-    url(r'^$', views.home_page, name='home'),
+    url(r'^$', views.home_page, name='michelle_home'),
+    url(r'^$', views.landing_page, name='greatideations_home'),
 ]
