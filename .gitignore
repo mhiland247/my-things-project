@@ -4,3 +4,4 @@ myv
 django.db.backends.mysql
 /logs
 .DS_Store
+/static
