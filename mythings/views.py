@@ -1,6 +1,8 @@
 import socket
 import json
 import operator
+from django.contrib.sites.shortcuts import get_current_site
+from django.contrib.sites.models import Site
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect, render_to_response
 from django.http import HttpResponse
@@ -9,13 +11,23 @@ from .models import Post, Tag, ContactEntry
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_protect, requires_csrf_token
 from django.template import RequestContext
+from django.http import HttpResponseNotFound 
 
 # Create your views here.
-def home_page(request):
-    return render(request, 'mythings/michelle/home.html')
+'''def get_my_site(request):
+    current_site = get_current_site(request)
+    if current_site.domain == 'michellehiland.com':
+        return render(request, 'mythings/michelle/home.html')
+    elif request.get_host.domain == 'greatideations.com':
+        return render(request, 'mythings/greatideations/index.html')
+    else:
+        return render(request, 'mythings/error.html')'''
 
-def landing_page(request):
-    return render(request, 'mythings/greatideations/index.html')
+def home_page(request):
+   return render(request, 'mythings/michelle/home.html')
+
+#def landing_page(request):
+#    return render(request, 'mythings/greatideations/index.html')
 
 @csrf_protect
 #@login_required

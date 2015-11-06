@@ -536,7 +536,7 @@ body {
 }
 
 .zoom {
-	background-image: url('../images/zoom.png');
+	background-image: url('../img/zoom.png');
 	background-position: center center;
 	background-repeat: no-repeat;
 	height: 100%;
@@ -557,7 +557,7 @@ body {
 }
 
 #arrows div {
-	background-image: url('../images/website-arrows.png');
+	background-image: url('../img/website-arrows.png');
 	cursor: pointer;
 	height: 30px;
 	position: absolute;

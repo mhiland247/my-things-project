@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME="things"                              #Name of the application (*)
-DJANGODIR=/home/ubuntu/things             # Django project directory (*)
+DJANGODIR=/home/ubuntu/things/             # Django project directory (*)
 SOCKFILE=/home/ubuntu/things/run/gunicorn.sock       # we will communicate using this unix socket (*)
 USER=root                                        # the user to run as (*)
 GROUP=www-data                                     # the group to run as (*)
@@ -23,7 +23,7 @@ test -d $RUNDIR || mkdir -p $RUNDIR
 
 # Start your Django Unicorn
 # Programs meant to be run under supervisor should not daemonize themselves (do not use --daemon)
-exec /home/ubuntu/things/myv/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
+exec /home/ubuntu/things//myv/bin/gunicorn ${DJANGO_WSGI_MODULE}:application \
   --name $NAME \
   --workers $NUM_WORKERS \
   --user $USER \

@@ -15,7 +15,6 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -27,12 +26,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['michellehiland.com', 'www.michellehiland.com', '172.31.19.107', '127.0.0.1']
 
-# Cookies settinss:
-
-#SESSION_COOKIE_SECURE = True
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
-#CSRF_COOKIE_SECURE = True
-
+SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = (
@@ -42,6 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'mythings',
     'admin_exporter',
 )

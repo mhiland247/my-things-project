@@ -25,7 +25,6 @@ urlpatterns = [
     url(r'^', include('mythings.urls')),
     #url(r'^', mythings.views.index),
     #url(r'^mythings/', include('mythings.urls')),
-    url(r'^admin/', include(admin.site.urls)),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
