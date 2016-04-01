@@ -1,10 +1,12 @@
 Synopsis
+
 My things project is website with a dynamic portfolio of "things" I have created.
 The portfolio page adds the newest content to the top. Each thing can be clicked
 on to view indivually and all are associated with tags so can be aggregated based
 on tags and in the case of portfolio all things with the tag portfolio are displayed.
 
 Code Example
+
 These examples will show you how to create a thing and then view it specifing a tag 
 to sort things that are similar.
 
