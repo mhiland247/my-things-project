@@ -13,10 +13,17 @@ body, html {
     background-color: #32c5d2;
 }
 
+.navbar-brand {
+    padding: 10px 15px;
+}
+
+.navbar-button {
+   background-color: #ffffff;
+}
 /* Header Block */
 
 #heading-div {
-    background: url('../img/header_pic.jpg') 0 0 no-repeat;;
+    background: url('../img/header_pic2.jpg') 0 0 no-repeat;;
     height: 590px;
     width: auto;  
     background-size: cover;
@@ -81,7 +88,7 @@ body, html {
 }
 
 .about-text{
-  font-size: 16px;
+  font-size: 18px;
   color: #fff;
   text-align: center;
   line-height: 200%;
@@ -265,6 +272,10 @@ ul {
   list-style-type: none;
 }
   
+.form-control {
+    display: table-row;
+    width: 65% !important;
+}
 
 /* Social Media Icons */
 

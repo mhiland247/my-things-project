@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_aa&dr3x$_p(splcedsvog*%etxuww23chaajt&vo(*11_y7%4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['michellehiland.com', 'www.michellehiland.com', '172.31.19.107', '127.0.0.1']
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'mythings',
     'admin_exporter',
+    'djangoseo',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.core.context_processors.media',
                 'django.core.context_processors.static',
+		'django.core.context_processors.request',
             ],
         },
     },
@@ -107,6 +109,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL = '/main/'
+LOGOUT_REDIRECT_URL = '/main/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/

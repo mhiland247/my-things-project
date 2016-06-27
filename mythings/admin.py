@@ -1,11 +1,14 @@
 import csv
 from django.contrib import admin
-from .models import Post, Tag, ContactEntry
+from .models import Post, Tag, ContactEntry, UserProfile
 from django.core import serializers
 from django.http import HttpResponse
-from django.db.models.loading import get_model
+from djangoseo.admin import register_seo_admin
+from mythings.seo import MyMetadata
+
 
 # Register your models here.
+#admin.site.register(MyMetadata)
 
 def export_as_json(modeladmin, request, queryset):
     response = HttpResponse(content_type="application/json")
@@ -51,6 +54,13 @@ class ContactEntryAdmin(admin.ModelAdmin):
 
     actions = [export_as_json]
 
+#class MyMetaDataAdmin(admin.ModelAdmin):
+#    fieldsets = [
+#        ('metadata',        {'fields': ['title', 'keyword', 'description', 'h1']}),
+#]
+
 admin.site.register(Tag) 
 admin.site.register(ContactEntry, ContactEntryAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(UserProfile)
+register_seo_admin(admin.site, MyMetadata)

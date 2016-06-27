@@ -1,0 +1,19 @@
+{% block content %}
+<h1>Register with Things Theory</h1>
+
+         <strong>Register Here!</strong><br />
+
+        <form id="user_form" method="post" action="/adduser/" enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <!-- Provide a button to click to submit the form. -->
+            <input type="submit" name="submit" value="Register" />
+        </form>
+
+<!--<form enctype="multipart/form-data"method="post" action="">
+    <input type="submit" value="Create new user account" />
+</form>-->
+{% endblock %}

@@ -1,4 +1,4 @@
-{% extends 'mythings/michelle/base.html' %}:
+{% extends 'mythings/michelle/base.html' %}
 {% load staticfiles %}
 
 {% block content %}
@@ -10,15 +10,16 @@
 	  <div id="heading-sub">Freelancer</div>
     </div>
   </div>
-  
-  <!-- wraps site content-->
+
+<!-- wraps site content-->
   <div class="row">
 
     <div class="col-xs-12 quote-div">
-	<div class="text-center quote-text">"I run because it sets me free. I run up mountains because it reminds me that the path ahead is difficult yet the journey is always worthwhile! "  -- Michelle Hiland </div>
+        <div class="text-center quote-text">"I run because it sets me free. I run up mountains because it reminds me that the path ahead is difficult yet the journey is always worthwhile! "  -- Michelle Hiland </div>
     </div>
   </div>
   
+
   <!-- About me section -->
   <div class="row blue-bg">
         
@@ -51,7 +52,7 @@
         
       </div>
   </div>
-  
+
   <!-- Services Section -->
     <div class="row">
         
@@ -68,12 +69,12 @@
           <div class="services-text">Website Design</div>
             <div class="services-img"><img class="img-responsive" src="{% static 'mythings/michelle/img/website_design_art.png' %}"></div>
             <div class="services-text-small">
-              I design the layout of each website based on a discussion of needs and preferences. I set up the domain name and host services. I am proficient in HTML/CSS/Javascript/jQuery, python, Django and Wordpress.
+              I design the layout of each website based on a discussion of needs and preferences. I set up the domain name and host services. I am proficient in HTML/CSS, Javascript/jQuery, Python, Django, LAMP, Wordpress, Drupal and SquareSpace.
             </div>
         </div>
       
         <div class="col-xs-12 col-md-4">
-          <div class="services-text">Social Media Management</div>
+          <div class="services-text">Digital Marketing</div>
         
           <!--<div class="social-shape">
             <span>
@@ -87,7 +88,7 @@
           </div>-->
 	  <div class="services-img"><img class="img-responsive" src="{% static 'mythings/michelle/img/social_design.png' %}"></div>
           <div class="services-text-small">
-            I create posts, images and videos for all social media platforms and find relevant articles and information to aid the personalized content.
+            I perform both on-site and off-site SEO optimizations monthly and monitor performance and provide reports using Google Analytics. I create and implement email marketing campaigns using Constant Contact and create social media ad campaigns. 
 	   </div>
       </div>
       
@@ -95,7 +96,7 @@
         <div class="services-text">Graphic Design</div>
         <div class="services-img"><img class="img-responsive" src="{% static 'mythings/michelle/img/graphic_design_art.png' %}"></div>
          <div class="services-text-small">
-            I create logos, infographics, page layouts, icons, favicons and edit photos for websites, marketing strategies and advertising needs. I am proficient in Adobe Suite.
+            I create logos, infographics, business cards, page layouts, icons, favicons and edit photos for websites, marketing strategies and advertising needs. I am proficient in Adobe Suite.
          </div>
       </div>
 
@@ -124,8 +125,8 @@
 	 <div id="contact">
             <form id="contact-post" enctype="multipart/form-data" method="post" action="/contact/" class="contact-form">  {% csrf_token %}
 	       <div id="the_post">
-                  <label for="message" class="sr"></label>
-                    <textarea id="message" type="text" class="field" name="message" cols="80" rows="18"></textarea>
+                  <label for="message" class="sr form-control-label"></label>
+                    <textarea id="message" type="text" class="form-control" name="message"></textarea>
                     <div id="results"></div> <!-- errors go here -->
                     <div class="text_right">
                       <input id="submit-hide" type="submit" class="submit-button" value="Submit">

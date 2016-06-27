@@ -23,10 +23,11 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^', include('mythings.urls')),
+    #url(r'', include('password_reset.urls')),
     #url(r'^', mythings.views.index),
     #url(r'^mythings/', include('mythings.urls')),
     url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
-    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/main'}),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
