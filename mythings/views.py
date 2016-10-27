@@ -20,23 +20,17 @@ from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view
 from .serializers import UserSerializer, ThingsSerializer, TasksSerializer
+
 # Create your views here.
-'''def get_my_site(request):
-    current_site = get_current_site(request)
-        return render(request, 'mythings/michelle/home.html')
-    else:
-        return render(request, 'mythings/error.html')'''
-#def index(request):
-#    logos_list = Post.objects.filter(tags__tag='logo')
-#    infos_list = Post.objects.filter(tags__tag='infographic')
-#    packaging_list = Post.objects.filter(tags__tag='packaging_label')
-#    page_list = Post.objects.filter(tags__tag='flyer')
-#    return render(request, 'mythings/michelle/index.html', {'logos_list' : logos_list, 'infos_list' : infos_list, 'packaging_list' : packaging_list, 'page_list' : page_list })    
-'''@api_view()
-def hello_world(request):
-    return Response({"message": "Hello, world!"})'''
+
+"""Angular.js"""
 
 
+
+"""End of Angular.js"""
+
+
+""" Django Views with normal template and url flow"""
 def index(request):
     portfolio = Post.objects.filter(tags__tag='portfolio')
     first_logo = Post.objects.filter(tags__tag='modern_logo')
@@ -46,10 +40,6 @@ def index(request):
     fifth_item = Post.objects.filter(tags__tag='muscle_diagram')
     sixth_item = Post.objects.filter(tags__tag='businesscard')
     return render(request, 'mythings/michelle/index.html', {'portfolio' : portfolio, 'first_logo' : first_logo, 'second_logo' : second_logo, 'third_logo' : third_logo, 'fourth_logo' : fourth_logo, 'fifth_item' : fifth_item, 'sixth_item' : sixth_item})
-
-
-def home_page(request):
-   return render(request, 'mythings/michelle/home.html')
 
 @csrf_protect
 #@login_required
@@ -79,14 +69,6 @@ def handle_uploaded_file(f,n):
         for chunk in f.chunks():
             destination.write(chunk)
 
-def post_detail_name(request, name):
-    for post in Post.objects.all():
-        if post.url_name == name:
-            return render(request, 'mythings/michelle/post_detail.html', {'post': post})
-
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'mythings/michelle/post_detail.html', {'post': post})
 
 def tag_list(request, tag=None): #browser sends request for page, django receives request and creates request obj about the request, tag is a kwarg-returned as dict 'tag':tag key:value
     if tag:
@@ -95,16 +77,6 @@ def tag_list(request, tag=None): #browser sends request for page, django receive
         posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
         tag = "Blog"
     return render(request, 'mythings/michelle/tag_list.html', {'posts': posts, 'tag': tag.title()})
-
-#def tag_logo(request):
- #   logos=Post.objects.filter(tags__tag='logo')
-  #  return render(request, 'mythings/michelle/index.html', {'logos': logos})
-
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    #latest_blog_list = Post.objects.order_by('-published_date')[:2]
-    #context = {'latest_blog_list': latest_blog_list}
-    return render(request, 'mythings/michelle/myblog.html', {'posts': posts})
 
 @requires_csrf_token
 def lead(request):
@@ -130,27 +102,12 @@ def lead(request):
         )
 
 
-
-def adduser(request):
-    if request.method == "POST":
-        form = UserForm(request.POST)
-       # profile_form = UserProfileForm(request.POST)
-        if form.is_valid():
-            new_user = User.objects.create_user(**form.cleaned_data)
-	    
-            return HttpResponseRedirect('/main/')
-    else:
-        form = UserForm()
-       # profile_form = UserProfileForm()
-
-    return render(request, 'registration/adduser.html', {'form': form})
-
-def main_page(request):
-    return render(request, 'mythings/main.html') 
-
-
 def google(request):
     return render(request, 'mythings/michelle/googled9f8c9df384d9723.html')
+
+"""End of django normal template url flow"""
+
+"""Rest Framework Practice"""
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -245,78 +202,6 @@ def task_detail(request, pk):
         task.delete()
         return Response(status=status.HTTP_202_NO_CONTENT)
 
-                                                          
-'''def register(request):
-    # Set a boolena value to to False initially. Code changes value to True when registration succeeds.
-    registered = False
+    """End Rest Framework Practice"""
 
-    # If it's a HTTP POST, we're interested in processing form data.
-    if request.method == 'POST':
-        # Attempt to grab information from the raw form information.
-        user_form = UserForm(data=request.POST)
-        profile_form = UserProfileForm(data=request.POST)
 
-        # If the two forms are valid...
-        if user_form.is_valid() and profile_form.is_valid():
-            # Save the user's form data to the database.
-            user = user_form.save()
-
-            # Now we hash the password with the set_password method.
-            user.set_password(user.password)
-            user.save()
-
-            # Since we need to set the user attribute ourselves, we set commit=False.
-            profile = profile_form.save(commit=False)
-            profile.user = user
-
-            if 'picture' in request.FILES:
-                profile.picture = request.FILES['picture']
-
-            profile.save()
-
-            # Update our variable to tell the template registration was successful.
-            registered = True
-        return render(request, 'mythings/main.html', {'registered': registered})
-
-    # These forms will be blank, ready for user input.
-    else:
-        user_form = UserForm()
-        profile_form = UserProfileForm()
-
-    # Render the template depending on the context.
-    return render(request, 'registration/register.html',{'user_form': user_form, 'profile_form': profile_form, 'registered': registered})
-
-def user_login(request):
-    # If the request is a HTTP POST, try to pull out the relevant information.
-    if request.method == 'POST':
-        # Gather the username and password provided by the user.
-        username = request.POST['username']
-        password = request.POST['password']
-
-        # Use Django's machinery to attempt to see if the username/password
-        user = authenticate(username=username, password=password)
-
-        # If we have a User object, the details are correct.
-        if user:
-            # Is the account active? It could have been disabled.
-            if user.is_active:
-                # If the account is valid and active, we can log the user in.
-                return HttpResponseRedirect('mythings/main.html')
-            else:
-                # An inactive account was used - no logging in!
-                return HttpResponse("Your Things Theory account is disabled.")
-        else:
-            # Bad login details were provided. So we can't log the user in.
-            print ("Invalid login details: {0}, {1}".format(username, password))
-            return HttpResponse("Invalid login details supplied.")
-
-    else:
-        return render(request, 'registration/login.html', {})
-
-@login_required
-def user_logout(request):
-    # Since we know the user is logged in, we can now just log them out.
-    logout(request)
-
-    # Take the user back to the homepage.
-    return HttpResponseRedirect('/main/')'''
