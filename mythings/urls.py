@@ -33,11 +33,11 @@ urlpatterns = [
     # restapi urls practice
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^tasks/$', views.task_list, name='task_list'),
-    url(r'^taks/(?P<pk>[0-9]+)/$', views.task_detail, name='task_detail'),
+    url(r'^tasks/(?P<pk>[0-9]+)/$', views.task_detail, name='task_detail'),
     url(r'^thingslist/$', views.things_list, name='things_list'),
     #end restapi pracice
     #angular.js
-    url(r'^lead/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
+    #url(r'^lead/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
     url(r'^leads/$', LeadList.as_view(), name='lead-list'),
     url(r'^thing/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
     url(r'^thing/$', ThingList.as_view(), name='thing-list')

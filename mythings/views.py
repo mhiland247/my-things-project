@@ -50,13 +50,13 @@ class LeadList(generics.ListCreateAPIView):
     ]
 
 
-class LeadDetail(generics.RetrieveAPIView):
-    model = Lead
-    queryset = Lead.objects.all()
-    serializer_class = LeadSerializer
-    permission_classes = [
-        permissions.AllowAny
-    ]
+#class LeadDetail(generics.RetrieveAPIView):
+   # model = Lead
+   # queryset = Lead.objects.all()
+   # serializer_class = LeadSerializer
+   # permission_classes = [
+   #     permissions.AllowAny
+    #]
 
 
 """End of Angular.js"""
