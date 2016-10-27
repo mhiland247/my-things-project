@@ -69,6 +69,11 @@ def handle_uploaded_file(f,n):
         for chunk in f.chunks():
             destination.write(chunk)
 
+def post_detail_name(request, name):
+    for post in Post.objects.all():
+        if post.url_name == name:
+            return render(request, 'mythings/michelle/post_detail.html', {'post': post})
+
 
 def tag_list(request, tag=None): #browser sends request for page, django receives request and creates request obj about the request, tag is a kwarg-returned as dict 'tag':tag key:value
     if tag:
