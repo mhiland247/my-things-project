@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Post, Tag, Task
+from .models import Post, Tag, Task, Lead
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -18,3 +18,7 @@ class TasksSerializer(serializers.ModelSerializer):
         model = Task
         fields = ('completed', 'description', 'title')
 
+class LeadSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lead
+        fields = ('email', 'created_date')

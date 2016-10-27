@@ -14,17 +14,47 @@ from django.http import HttpResponseNotFound, HttpResponse, HttpResponseRedirect
 from .forms import UserForm, UserProfileForm
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
-from rest_framework import viewsets, authentication, permissions, status
+from rest_framework import viewsets, authentication, permissions, status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view
-from .serializers import UserSerializer, ThingsSerializer, TasksSerializer
-
+from .serializers import UserSerializer, ThingsSerializer, TasksSerializer, LeadSerializer
 # Create your views here.
 
 """Angular.js"""
+#read-only endpoints to represent a collection of model instances.
+class ThingsList(generics.ListCreateAPIView):
+    model = Post
+    queryset = Post.objects.all().filter(tags__tag='portfolio')
+    serializer_class = ThingsSerializer
+    permission_classes = [
+        permissions.AllowAny
+    ]
 
+# read only view for single model instance
+class ThingDetail(generics.RetrieveUpdateDestroyAPIView APIView):
+    model = Post
+    queryset = Post.objects.all()
+    serializer_class = ThingsSerializer
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+class LeadList(generics.ListCreateAPIView):
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
+    permission_classes = [
+        permissions.AllowAny
+    ]
+
+
+class LeadDetail(generics.RetrieveAPIView):
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
+    permission_classes = [
+        permissions.AllowAny
+    ]
 
 
 """End of Angular.js"""
