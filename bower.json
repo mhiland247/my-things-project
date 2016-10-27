@@ -1,0 +1,27 @@
+{
+  "name": "things",
+  "description": "my website and blog",
+  "main": "index.js",
+  "authors": [
+    "hiland"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "developer",
+    "designer"
+  ],
+  "homepage": "https://github.com/mhiland247/my-things-project",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-resource": "1.2.13",
+    "bootstrap": ">=3.0",
+    "underscore": "*"
+  }
+}

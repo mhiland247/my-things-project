@@ -33,7 +33,7 @@ class ThingsList(generics.ListCreateAPIView):
     ]
 
 # read only view for single model instance
-class ThingDetail(generics.RetrieveUpdateDestroyAPIView APIView):
+class ThingDetail(generics.RetrieveUpdateDestroyAPIView):
     model = Post
     queryset = Post.objects.all()
     serializer_class = ThingsSerializer
@@ -42,6 +42,7 @@ class ThingDetail(generics.RetrieveUpdateDestroyAPIView APIView):
     ]
 
 class LeadList(generics.ListCreateAPIView):
+    model = Lead
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
     permission_classes = [
@@ -50,6 +51,7 @@ class LeadList(generics.ListCreateAPIView):
 
 
 class LeadDetail(generics.RetrieveAPIView):
+    model = Lead
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
     permission_classes = [

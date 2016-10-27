@@ -1,0 +1,27 @@
+{
+  "name": "things",
+  "version": "1.0.0",
+  "description": "my website and blog",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhiland247/my-things-project.git"
+  },
+  "keywords": [
+    "developer",
+    "designer"
+  ],
+  "author": "hiland",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mhiland247/my-things-project/issues"
+  },
+  "homepage": "https://github.com/mhiland247/my-things-project#readme"
+}

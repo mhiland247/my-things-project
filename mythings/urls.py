@@ -8,15 +8,15 @@ router.register(r'users', views.UserViewSet)
 router.register(r'things', views.ThingsViewSet)
 #router.register(r'portfolio', views.PortfolioViewSet, base_name='portfolio')
 
-things_urls = patterns('',
-    url(r'^/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
-    url(r'^$', ThingList.as_view(), name='thing-list')
-)
+#things_urls = urlpatterns('',
+#    url(r'^/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
+#    url(r'^$', ThingList.as_view(), name='thing-list')
+#)
 
-leads_urls = patterns('',
-    url(r'^/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
-    url(r'^$', LeadList.as_view(), name='lead-list')
-)
+#leads_urls = patterns('',
+#    url(r'^/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
+#    url(r'^$', LeadList.as_view(), name='lead-list')
+#)
 
 
 urlpatterns = [
@@ -37,7 +37,12 @@ urlpatterns = [
     url(r'^thingslist/$', views.things_list, name='things_list'),
     #end restapi pracice
     #angular.js
-    url(r'^', include(things_urls)),
-    url(r'^leads', include(leads_urls)),
+    url(r'^lead/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
+    url(r'^leads/$', LeadList.as_view(), name='lead-list'),
+    url(r'^thing/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
+    url(r'^thing/$', ThingList.as_view(), name='thing-list')
+
+    #url(r'^', include(things_urls)),
+   # url(r'^leads', include(leads_urls)),
 ]
 
