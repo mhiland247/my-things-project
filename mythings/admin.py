@@ -4,7 +4,7 @@ from .models import Post, Tag, ContactEntry, UserProfile
 from django.core import serializers
 from django.http import HttpResponse
 from djangoseo.admin import register_seo_admin
-from mythings.seo import MyMetadata
+from .seo import MyMetadata
 
 
 # Register your models here.

@@ -26,7 +26,8 @@ $(function() {
  		//$('#submit-hide').hide();
 		//$('#contact').hide();
                 $("#thanks").prepend("<div><strong>"+json.result+"</strong> - <span> "+json.created_date+
-                    "</span> </div>");
+                    "</span> 
+			</div>");
                 console.log("success"); // another sanity check
             },
             // handle a non-successful response

@@ -1,11 +1,11 @@
-{% extends 'mythings/michelle/base.html' %}
+{% extends 'mythings/michelle/base_tags.html' %}
 {% load staticfiles %}
 {% block content %}
 
-<!-- header baner -->
-  <div class="jumbotron tag-background blue-bg">
-     <div class="post-heading"> {{ tag }} </div>
-  </div>
+<!-- header baner
+  <div class="col-sm-12 col-md-12">
+     <h1 class="about"> {{ tag }} </h1>
+  </div>-->
 
 <!-- Blog list -->
 {% for post in posts %}

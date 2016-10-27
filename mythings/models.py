@@ -69,3 +69,17 @@ class UserProfile(models.Model):
     # Override the __unicode__() method to return out something meaningful!
     def __str__(self):
         return self.user.username
+
+class Lead(models.Model):
+    email = models.EmailField()
+    created_date = models.DateTimeField(default=timezone.now)
+    metadata = models.CharField(max_length=2000)
+
+    def __str__(self):
+        return self.email
+
+class Task(models.Model):
+    completed = models.BooleanField(default=False)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+

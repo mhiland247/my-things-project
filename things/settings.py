@@ -40,7 +40,17 @@ INSTALLED_APPS = (
     'mythings',
     'admin_exporter',
     'djangoseo',
+    'rest_framework',
 )
+
+REST_FRAMEWORK = {
+   'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
+   'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+    'PAGE_SIZE': 10,
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

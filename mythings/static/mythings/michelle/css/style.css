@@ -134,7 +134,7 @@ body, html {
 }
 
 .sub-services, a:link {
-    color: #333333;
+    color: #525252;
     background-color: transparent;
 }
 
@@ -357,7 +357,7 @@ ul {
 }
 
 .post-divider {
-  border-bottom: 5px solid #32c5d2;  
+  border-bottom: 5px solid #46c6c6;  
 }
 /* Add Post Form */
 

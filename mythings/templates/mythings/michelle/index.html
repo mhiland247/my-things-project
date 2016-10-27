@@ -1,0 +1,454 @@
+{% extends 'mythings/michelle/base2.html' %}
+{% load staticfiles %}
+{% block content %}
+
+	<!--  Hero Section  -->
+	<section class="hero" id="hero">
+		<div class="container">
+			<div class="caption">
+				<h1 class="text-uppercase  animated wow fadeInLeft">I Run Because It Sets Me Free</h1>
+				<p class="text-lowercase  animated wow fadeInLeft"><strong>Running teaches me perseverance and humility, this pours into my passion and process for designing and developing because they require problem solving and continuous iterations of ideas to turn into something truly spectacular.</strong></p>
+
+			</div>			
+		</div>
+	</section>
+	<!--  End Hero Section  -->
+
+
+
+
+
+
+	<!--  Featured On Section  -->
+	<section class="featured_on">
+		<div class="container">
+			<ul class="list-unstyled text-center clearfix">
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown">
+					<img src="{% static 'mythings/michelle/img2/dedicated.png' %}" alt="" title="">
+				</li>
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown" data-wow-delay=".2s">
+					<img src="{% static 'mythings/michelle/img2/passionate.png' %}" alt="" title="">
+				</li>
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown" data-wow-delay=".3s">
+					<img src="{% static 'mythings/michelle/img2/go_getter.png' %}" alt="" title="">
+				</li>
+				<li class="col-xs-6 col-sm-6 col-md-3 animated wow fadeInDown" data-wow-delay=".4s">
+					<img src="{% static 'mythings/michelle/img2/determined.png' %}" alt="" title="">
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!--  End Featured On Section  -->
+
+
+
+
+
+
+	<!--  About Section  -->
+	<section class="about" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 text-center animated wow fadeInLeft">
+					<div class="iphone">
+						<img src="{% static 'mythings/michelle/img2/skills.png' %}" alt="" title="">
+					</div>
+				</div>
+				<div class="col-md-6 animated wow fadeInRight">
+					<div class="features_list">
+						<h1 class="text-uppercase">Creativity Meets Development</h1>
+						<p>I am a software engineer and innovative web developer with strong frontend development skills, strong relational database skills, and strong design skills. My degrees and experience gives me knowledge and insight into how to make strategic and operational decisions in a timely manner. 
+						</p>
+						<ul class="list-unstyled">
+							<li> <!--class="camera_icon"-->
+								<span>BS - Operation Information Technology Management</span>
+							</li>
+							<li><!--class="video_icon"-->
+								<span>BS - Arts & Science-Major in Integrated Physiology</span>
+							</li>
+							<li> <!--class="eye_icon"-->
+								<span>Harvard EdX - Introduction to Computer Sceience</span>
+							</li>
+							<li><!--class="pic_icon"-->
+								<span>London School of Economics and Political Science </span>
+							</li>
+							<li> <!--class="loc_icon"-->
+								<span>Lynda.com - Illustrator for Web Design</span>
+							</li>
+						</ul>
+						<a href="{% url 'mythings.views.tag_list' tag='passion' %}" class="app_store_btn text-uppercase">
+						<!--<a href="#" class="app_store_btn text-uppercase" id="play_video" data-video="http://www.youtube.com/embed/Bm3NV3gGB2w?autoplay=1&showinfo=0">-->
+							<i class="play_icon"></i>
+							<span>More About Me</span>
+						</a>
+						
+					</div>					
+				</div>
+			</div>
+		</div>
+
+		<div class="about_video show_video">
+			<a href="" class="close_video"></a>
+		</div>
+	</section>
+	<!--  End About Section  -->
+
+<!--  App Features Section -->  
+	<section class="app_features animated wow fadeIn " id="portfolio" data-wow-duration="4s">
+		<div class="container">
+			<div class="row">
+			    <div class="col-sm-12 col-md-12 text-center">	
+				<h1 class="text-uppercase padding_logo">Websties & Branding</h1>
+			    </div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 col-md-4 details animated wow fadeInDown"   data-wow-delay="0s">
+				{% if third_logo %}
+                                        {% for post in third_logo %}
+                                     <a class="link-portfolio" href="http://www.strangebyrds.com"><img class="img-responsive" src="{{post.get_image}}"></a>
+                                <a class="link-portfolio"href="www.strangebyrds.com">View Website</a>
+                                 {% endfor %}
+    
+                                        {% else %}
+                                        <p>No logos are available.</p>
+                                        {% endif %}
+
+				</div>
+				<div class="col-sm-4 col-md-4 details animated wow fadeInDown"   data-wow-delay="1s">
+				 {% if second_logo %}
+                                        {% for post in second_logo %}
+				     <img class="img-responsive" src="{{post.get_image}}">
+				
+				 {% endfor %}
+    
+                                        {% else %}
+                                        <p>No logos are available.</p>
+                                        {% endif %}
+				</div>
+				<div class="col-sm-4 col-md-4 details animated wow fadeInDown"   data-wow-delay="1s">
+				 {% if first_logo %}
+                                        {% for post in first_logo %}
+                                     <a  class="link-portfolio" href="http://www.thingstheory.com/"><img class="img-responsive padding_tt" src="{{post.get_image}}"></a>
+					<a class="link-portfolio"href="www.strangebyrds.com">View Website</a>
+                                
+				 {% endfor %}
+    
+                                        {% else %}
+                                        <p>No logos are available.</p>
+                                        {% endif %}
+				</div>
+				    <!--<ul class="list-unstyled" id="lslider">
+				    {% if logos_list %}
+					{% for post in logos_list %}
+  					    <li>
+					    	<img class="img-responsive" src="{{post.get_image}}" alt="{{post.title}}">
+    						<span class="job">{{post.title}}</span>
+  					    
+    					{% endfor %}
+    
+					{% else %}
+    					<p>No logos are available.</p>
+					{% endif %}
+					   </li>
+                                   
+				    </ul>
+				</div>
+				
+				<div class="col-sm-6 col-md-6 details animated wow fadeInDown text-right" data-wow-delay=".1s">
+                                        <h1>Websites</h1>
+                                        <h4 class="job"><a href="">Strangebyrds</a></h4>
+                                        <h4 class="job"><a href="">GreatIdeations</a></h4>
+                                </div>-->
+
+			</div>
+		</div> <!--container -->
+
+		
+		
+				<!--<div class="col-sm-4 col-md-4 details animated wow fadeInDown" data-wow-delay="0s">
+					<h1 class="text-uppercase">Packaging Labels</h1>
+				     <div class="text-center slides clearfix">
+					{% if packaging_list %}
+					    {% for post in packaging_list %}
+					<li>
+					<img class="img-responsive" src="{{post.get_image}}" alt="" title="{{post.title}}">
+					    {% endfor %}
+					{% else %}
+					<p> No packaging labels available</p>
+					{% endif %}
+					</li>
+				    </div>
+				</div>
+				<div class="col-sm-6 col-md-6 details animated wow fadeInDown" data-wow-delay=".1s">
+					<h1>Social Media Campaigns</h1>
+					<h4 class="job"><a href="">Amy's House</a></h4>
+					<h4 class="job"><a href="">PeakPro</a></h4>
+					<h4 class="job"><a href="">Strive</a></h4>
+					<h4 class="job"><a href="">BoulderValleyDental</a></h4>
+					<h4 class="job"><a href="">5.12Solutions</a></h4>
+					<h4 class="job"><a href="">BoulderDentalArts</a></h4>
+				</div>
+
+				<div class="col-sm-6 col-md-6 details animated wow fadeInDown" data-wow-delay=".2s">
+                                         <h1>Marketing Content - Infographics</h1>
+                                              <ul class="list-unstyled text-center slides clearfix" id="islider">
+                                             <div class="text-center slides clearfix" id="islider">
+                                                {% if infos_list %}
+
+                                                    {% for post in infos_list %}
+                                                        <li>
+                                                            <img class="img-responsive" src="{{post.get_image}}">
+                                                            <span class="job">{{post.title}}</span>
+                                                    {% endfor %}
+
+                                                    {% else %}
+                                                        <p>No infographics are available.</p>
+                                                {% endif %}
+                                                        </li>
+                                                    </ul>
+                                </div>-->				
+
+			</div> <!--row-->
+
+		</div><!--container-->
+	</section>
+	<!--  And App Features Section  -->
+
+
+	<!-- Portfolio section contined -->
+	 <section class="about">
+                <div class="container">
+                        <div class="row">
+                                <div class="col-md-4 text-center animated wow fadeInLeft">
+					 {% if fourth_logo %}
+                                        {% for post in fourth_logo %}
+                                     <img class="img-responsive padding_tt" src="{{post.get_image}}">
+
+                                 {% endfor %}
+
+                                        {% else %}
+                                        <p>No logos are available.</p>
+                                        {% endif %}
+				</div>
+				  <div class="col-md-4 text-center animated wow fadeInLeft">
+                                    {% if fifth_item %}
+                                        {% for post in fifth_item %}
+                                     <img class="img-responsive padding_tt" src="{{post.get_image}}">
+
+                                 {% endfor %}
+
+                                        {% else %}
+                                        <p>No logos are available.</p>
+                                        {% endif %}
+                                </div>
+				  <div class="col-md-4 text-center animated wow fadeInLeft">
+                                     {% if sixth_item %}
+                                        {% for post in sixth_item %}
+                                     <img class="img-responsive padding_tt" src="{{post.get_image}}">
+
+                                 {% endfor %}
+
+                                        {% else %}
+                                        <p>No logos are available.</p>
+                                        {% endif %}
+                                </div>
+			</div> <!--row-->
+		</div> <!--container-->
+	</section>
+		
+
+	<!-- Portfolio last section
+	<section class="app_features animated wow fadeIn " id="app_features" data-wow-duration="4s">
+                <div class="container">
+			 <div class="row">
+                             <div class="col-sm-12 col-md-12">
+                                <h1 class="clients text-uppercase">Clients</h1>
+                            </div>
+			</div>
+			
+                        <div class="row">
+			     <div class="col-sm-3 col-md-3">
+				<a href="http://kinesisdance.com/"><img class="img-fluid clients-img center-block" src="{% static 'mythings/michelle/img2/dance.png' %}"></a>
+			    </div>
+			    
+			    <div class="col-sm-3 col-md-3">
+                                <a href="http://greatideations.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/lightbulb2.png' %}"></a>
+			    </div>
+			    
+  			    <div class="col-sm-3 col-md-3">
+                                <a href="http://www.bouldervalleydental.com/http://www.bouldervalleydental.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/bvd.png' %}"></a>
+                            </div>
+			   
+			    <div class="col-sm-3 col-md-3">
+				<a href="http://www.512solutions.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/512s.png' %}"></a>
+                            </div>
+
+                        </div>
+			    <div class="row">
+
+                                <div class="col-sm-3 col-md-3">
+				    <a href="http://strangebyrds.com/http://strangebyrds.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/bird.png' %}"></a>
+                                </div>
+				
+				<div class="col-sm-3 col-md-3">
+				    <a href="https://peakprofessionalpainting.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/peakpro2.jpeg' %}"></a>
+                                </div>
+
+				<div class="col-sm-3 col-md-3">
+                                    <a href="https://www.striveit.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/stive.png' %}"></a>
+                                </div>
+
+				<div class="col-sm-3 col-md-3">
+                                    <a href="http://holisticcannabisnetwork.com/"><img class="img-responsive clients-img center-block" src="{% static 'mythings/michelle/img2/hcn.png' %}"></a>
+                                </div>
+			</div>
+		</div>
+	</section> -->
+
+
+	<!--  Testimonials Section  -->
+	<section class="testimonials animated wow fadeIn" id="testimonials" data-wow-duration="4s">
+		<div class="container">
+			<div class="testimonials_list">
+
+				<ul class="list-unstyled text-center slides clearfix" id="tslider">
+					<li>
+						<blockquote>
+							<p>As a developer, Michelle blends artistic awareness with technical skills. As we work at the same level on our team, she has provides insight and feedback in a supportive, open-minded way that makes her one of the best teammates I have worked with. She is also committed to her own learning and improving her already impressive skillset constantly.</p>
+							<span class="author text-uppercase">Khaled Allen</span>
+							<span class="job">Front-End Web Developer</span>
+							
+						</blockquote>
+					</li>
+
+					<li>
+						<blockquote>
+							<p>Michelle is a diligent student and a great person. Highly recommended for organizations looking for a go-getter with personality.</p>
+							<span class="author text-uppercase">Kai R. Larsen</span>
+							<span class="job">Professor at University of Colorado</span>
+							
+						</blockquote>
+					</li>
+
+					<li>
+						<blockquote>
+							<p>I have known Michelle for over 7 years and have had the pleasure of spending time with her as a leader in the University of Colorado’s Anti-Trafficking group, and as a fund raising advocate and Board member for my own non-profit organization, The Mercy Project Colorado.She offers a very strong background in the technical skills needed to help a non-profit compete and gain traction in emerging markets.</p>
+							<span class="author text-uppercase">John Buechner</span>
+							<span class="job">Executive Director</span>
+							
+						</blockquote>
+					</li>
+					
+					<li>
+						<blockquote>
+							<p>Michelle worked as an intern for me editing lessons in Adobe Captivate 5.5. During that time she jumped right in taking on whatever task was handed to her. Michelle always took feedback and immediately applied it to her future work.</p>
+							<span class="author text-uppercase">Melinda Anderson</span>
+							<span class="job">Implementation Manager</span>
+							
+						</blockquote>
+					</li>
+					
+					<li>
+						<blockquote>
+							<p>I LOVE THIS!!!!!!GREAT GREAT JOB MICHELLE! Great looking, easy to navigateand so nice to have such easy access to the videos!!!</p>
+							<span class="author text-uppercase">Sally Strong</span>
+							<span class="job">Client</span>
+							
+						</blockquote>
+					</li>
+
+					  <li>
+                                                <blockquote>
+                                                        <p>It has been an absolutely joy working with Michelle! From the very beginning I have been able to trust her to execute every project with an attention to detail and quality. Michelle is able to offer a variety of front end development and digital marketing services, from WordPress customizations to search engine optimization. Plus, she is an absolute sweetheart to work with! I would highly recommend working with Michelle if given the opportunity!</p>
+                                                        <span class="author text-uppercase">Kayleen Cohen</span>
+                                                        <span class="job">Founder</span>
+
+                                                </blockquote>
+                                        </li>
+				</ul>
+				<div id="slider_nav">
+					<div id="prev_arrow"></div>
+					<div id="next_arrow"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!--  End Testimonials Section  -->
+
+
+
+
+
+
+	<!--  Email Subscription Section  -->
+	<!--<section class="sub_box">
+		<p class="cta_text animated wow fadeInDown">Work with me.</p>
+		<form action="http://pixelhint.us3.list-manage.com/subscribe/post?u=9cf3b8b1cfc597a436b9964d3&amp;id=2449ed590e" metohd="post" class="animated wow fadeIn" data-wow-duration="2s" id="submit_form">
+			<input type="email" id="mc-email" placeholder="Enter your email"/>
+			<button type="submit" id="mc_submit">
+				<i class="icon"></i>
+			</button>
+		</form>
+		<div class="message" id="error_msg">Please Enter A Valid Email.</div>
+		<div class="message" id="success_msg">Thank You For Your Subscription.</div>
+	</section>-->
+	<!--  End Email Subscription Section  -->
+	
+	<!-- lead div -->
+ <section class="sub_box" id="contact">
+	<div class="row">
+	    <div class="col-sm-4 col-md-4">
+	    </div>
+	    <div class="col-sm-4 col-md-4">
+		 <!-- lead div -->
+              <div id="lead">
+		<p class="cta_text animated wow fadeInDown text-center">Work with me.</p>
+                <form id="lead-post" enctype="multipart/form-data" action="/lead/" method="post"> {% csrf_token %}
+                  <div id="the_post" class="input-group contact-flex">
+                    <label for="email"></label>
+                    <input id="email" type="email" name="email" placeholder="Interested? Enter your email." class="form-control">
+                    <div id="results"></div> <!-- errors go here -->
+                    <span class="input-group-btn">
+                    <input id="submit-hide" type="submit" class="btn btn-danger mh-button" value="Submit">
+                    </span>
+                  </div>
+                </form>
+              </div>
+		 <!-- thank div -->
+                        <div class="text-center" id="thanks">
+                            {% for post in all_posts %}
+                            <strong>{{ post.results }}</strong>
+                            <em>{{ post.created_date }}</em>
+                                {% endfor %}
+                        </div>
+
+	    </div>
+	    <div class="col-sm-4 col-md-4">
+	    </div>
+	</div>
+        
+ </section>
+
+
+
+
+
+
+	<!--  Footer Section  -->
+	<footer>
+		<ul class="list-unstyled list-inline app_platform">
+			<li class="animated wow fadeInDown" data-wow-delay="0s">
+				<a href=""><img src="{% static 'mythings/michelle/img2/g_footer.png' %}" alt="" title=""></a>
+			</li>
+			<li class="animated wow fadeInDown" data-wow-delay=".1s">
+				<a href=""><img src="{% static 'mythings/michelle/img2/r_footer.png' %}" alt="" title=""></a>
+			</li>
+			<li class="animated wow fadeInDown" data-wow-delay=".2s">
+				<a href=""><img src="{% static 'mythings/michelle/img2/p_footer.png' %}" alt="" title=""></a>
+			</li>
+		</ul>
+		<p class="copyright animated wow fadeIn" data-wow-duration="2s">© 2016 <a href="http://pixelhint.com" target="_blank"><strong>Michelle Hiland</strong></a>. All Rights Reserved</p>
+	</footer>
+	<!--  End Footer Section  -->
+
+{% endblock %}

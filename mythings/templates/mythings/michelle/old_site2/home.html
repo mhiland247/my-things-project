@@ -1,0 +1,168 @@
+{% extends 'mythings/michelle/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<!-- header banner -->
+  <div class="row" id="heading-div">
+    <div class="column-xs-12">
+       <h1 id="heading-title">Michelle Hiland</h1>
+	  <div id="heading-sub">Freelancer</div>
+    </div>
+  </div>
+
+<!-- wraps site content-->
+  <div class="row">
+
+    <div class="col-xs-12 quote-div">
+        <div class="text-center quote-text">"I run because it sets me free. I run up mountains because it reminds me that the path ahead is difficult yet the journey is always worthwhile! "  -- Michelle Hiland </div>
+    </div>
+  </div>
+  
+
+  <!-- About me section -->
+  <div class="row blue-bg">
+        
+      <div  id="about" class="col-xs-12 col-md-6">
+        
+        <div class="about-title about-content">Meet Me</div>
+        
+          <div class="about-text">
+            I am a young professional with a background in Operation & Information Technology Management from the University of Colorado at Boulder. My business degree gives me a unique insight into the challenges and solutions faced by companies and an understanding of how processes work. I am determined, hard-working, enthusiastic and a true go-getter. 
+            <br>
+	    <br>
+	    As a developer and graphic designer I have assisted start-ups and nonprofits in gaining an online presence and enjoy both creating and developing modern attractive websites and applications.
+	    <br>
+	    <br>
+	    When I am not working I am enjoying the outdoors in beautiful Colorado. I love trail running, mountain biking, skiing, ice skating, photography and learning new trends. 
+	    <br>
+	    <br>
+	    Check out more of my passions <a id="passion-link" href="{% url 'mythings.views.tag_list' tag='passion' %}">Here!</a>
+              <br>
+              <br>
+           </div>
+          
+        </div>
+      
+      <div class="col-xs-12 col-md-6">
+        
+        <div class="about-pic about-content">
+	  <img class="img-responsive" src="{% static 'mythings/michelle/img/professional.jpg' %}">
+        </div>
+        
+      </div>
+  </div>
+
+  <!-- Services Section -->
+    <div class="row">
+        
+      <div id="portfolio" class="col-xs-12">
+        <div class="services-title">MY PORTFOLIO</div>
+      </div>
+      
+    </div>
+    
+    <div class="row">
+      <div class="services-content">
+        
+        <div class="col-xs-12 col-md-4">
+          <div class="services-text">Website Design</div>
+            <div class="services-img"><img class="img-responsive" src="{% static 'mythings/michelle/img/website_design_art.png' %}"></div>
+            <div class="services-text-small">
+              I design the layout of each website based on a discussion of needs and preferences. I set up the domain name and host services. I am proficient in HTML/CSS, Javascript/jQuery, Python, Django, LAMP, Wordpress, Drupal and SquareSpace.
+            </div>
+        </div>
+      
+        <div class="col-xs-12 col-md-4">
+          <div class="services-text">Digital Marketing</div>
+        
+          <!--<div class="social-shape">
+            <span>
+              <i id="fb" class="fa fa-facebook fa-3x"></i>
+              <i id="tw" class="fa fa-twitter fa-3x"></i>
+              <i id="pt" class="fa fa-pinterest fa-3x"></i>
+              <i id="ig" class="fa fa-instagram fa-3x"></i>
+              <i id="lk" class="fa fa-linkedin fa-3x"></i>
+              <i id="yt" class="fa fa-youtube fa-3x"></i>
+            </span>
+          </div>-->
+	  <div class="services-img"><img class="img-responsive" src="{% static 'mythings/michelle/img/social_design.png' %}"></div>
+          <div class="services-text-small">
+            I perform both on-site and off-site SEO optimizations monthly and monitor performance and provide reports using Google Analytics. I create and implement email marketing campaigns using Constant Contact and create social media ad campaigns. 
+	   </div>
+      </div>
+      
+      <div class="col-xs-12 col-md-4">
+        <div class="services-text">Graphic Design</div>
+        <div class="services-img"><img class="img-responsive" src="{% static 'mythings/michelle/img/graphic_design_art.png' %}"></div>
+         <div class="services-text-small">
+            I create logos, infographics, business cards, page layouts, icons, favicons and edit photos for websites, marketing strategies and advertising needs. I am proficient in Adobe Suite.
+         </div>
+      </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <div><a class="services-sub" href="{% url 'mythings.views.tag_list' tag='portfolio' %}">Check out some of my work!</a></div>
+      </div>
+    </div>
+      
+      <!--services-content-->
+      </div>
+    <!--row-->
+    </div>
+    
+    <!-- Contact Section -->
+
+  <div class="row blue-bg">
+    
+    <div class="col-xs-12">
+
+     <!--div container for contact form-->
+     <div class="contact-div">
+	
+         <div class="contact-text"> Please <b>Contact me</b> with your contact info here or send me an email at mhfreelancer@gmail.com</div>
+       <!-- form div -->
+	 <div id="contact">
+            <form id="contact-post" enctype="multipart/form-data" method="post" action="/contact/" class="contact-form">  {% csrf_token %}
+	       <div id="the_post">
+                  <label for="message" class="sr form-control-label"></label>
+                    <textarea id="message" type="text" class="form-control" name="message"></textarea>
+                    <div id="results"></div> <!-- errors go here -->
+                    <div class="text_right">
+                      <input id="submit-hide" type="submit" class="submit-button" value="Submit">
+                    </div>
+		</div>
+	    </form>
+	  </div>
+
+	<!-- thank div -->
+	 <div class="thanks-div" id="thanks">
+          {% for post in all_posts %}
+            <strong>{{ post.results }}</strong> 
+            <em>{{ post.created_date }}</em> 
+           {% endfor %}
+	</div>
+      
+      <!--div contanier for contact -->
+      </div>
+    <!-- column -->      
+    </div>
+  <!-- row -->  
+  </div>
+  
+
+  <div class="row blue-bg">
+    
+    <div class="col-xs-12">
+  
+      <div class="contact-icons">
+           <span class="social-li"><a class="social-a" href="https://www.facebook.com/michelleahiland"><i class="fa fa-facebook fa-2x"></i></a></span>
+           <span class="social-li"><a class="social-a" href="https://www.linkedin.com/pub/michelle-a-hiland/41/bba/21b"><i class="fa fa-linkedin fa-2x"></i></a></span>
+           <span class="social-li"><a class="social-a" href="https://www.pinterest.com/mhiland/"><i class="fa fa-pinterest fa-2x"></i></a></span>
+           <span class="social-li"><a class="social-a" href="https://instagram.com/michellehiland/"><i class="fa fa-instagram fa-2x"></i></a></span>
+      </div>
+      
+    </div>
+    
+  </div>
+
+{% endblock %}

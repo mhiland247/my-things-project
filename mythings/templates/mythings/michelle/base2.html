@@ -1,0 +1,97 @@
+{% load staticfiles %}
+{% load seo %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Michelle Hiland, freelance website desinger, developer and marketing specialist</title>
+    <meta name="description" content="Michelle Hiland is a freelance website designer, developer and digitial marketing specialist in Colorado." />
+    <meta name="keywords" content="freelance website designer, michelle hiland, digital marketing, developer" />
+     <!--  App Description  -->
+    <meta charset="utf-8">
+    <!--<meta name="author" content="pixelhint.com">-->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/michelle/css2/bootstrap.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/michelle/css2/owl.transitions.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/michelle/css2/owl.carousel.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/michelle/css2/animate.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/michelle/css2/main.css' %}"/>
+     <!-- CSS -->
+    <link href="{% static 'mythings/michelle/css/style.css' %}" rel="stylesheet">
+        
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/ajaxchimp.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/scrollTo.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/owl.carousel.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/wow.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/parallax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/nicescroll.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mythings/michelle/js2/main.js' %}"></script>
+
+    <!-- mobile-first style-adjust for phones-->
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height" />-->
+    <!-- Bootstrap -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+   
+    <!--fav-ico-->
+    <link rel="icon" type="image/png" href="{% static 'mythings/michelle/img/favicon_new.png' %}">
+    
+
+  </head>
+</html>
+
+<body>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KXBBG9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KXBBG9');</script>
+<!-- End Google Tag Manager -->
+
+	 <!--  Header Section  -->
+        <header>
+                <div class="container">
+                        <div id="home" class="logo pull-left animated wow fadeInLeft">
+                            <a href="{% url 'mythings.views.index' %}"><img src="{% static 'mythings/michelle/img2/logo2.png' %}" alt="" title=""></a>
+                        </div>
+
+
+                        <nav class="pull-left">
+                                <ul class="list-unstyled">
+                                        <li class="animated wow fadeInLeft" data-wow-delay="0s"><a href="#about">About</a></li>
+                                        <li class="animated wow fadeInLeft" data-wow-delay=".1s"><a href="#portfolio">Portfolio</a></li>
+                                        <li class="animated wow fadeInLeft" data-wow-delay=".2s"><a href="#testimonials">Testimonials</a></li>
+                                        <li class="animated wow fadeInLeft" data-wow-delay=".2s"><a href="#contact">Contact</a></li>
+                                </ul>
+                        </nav>
+
+                        <div class="social pull-right">
+                                <ul class="list-unstyled">
+                                       <!-- <li class="animated wow fadeInRight" data-wow-delay=".3s"><a href="https://www.pinterest.com/mhiland/" target="_blank"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwOC41MiA1MDguNTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUwOC41MiA1MDguNTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iMzJweCIgaGVpZ2h0PSIzMnB4Ij4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTI1NC4yNiwwQzExMy44NDUsMCwwLDExMy44NDUsMCwyNTQuMjZzMTEzLjg0NSwyNTQuMjYsMjU0LjI2LDI1NC4yNiAgICAgczI1NC4yNi0xMTMuODQ1LDI1NC4yNi0yNTQuMjZDNTA4LjUyLDExMy44MTMsMzk0LjY3NSwwLDI1NC4yNiwweiBNMjc0LjA5MiwzMjMuMDA1Yy0xOC41OTMtMS40My0yNi4zNzktMTAuNjQ3LTQwLjkzNi0xOS41MTQgICAgIGMtOC4wMDksNDIuMDE2LTE3Ljc5OCw4Mi4zMTctNDYuNzg0LDEwMy4zMjVjLTguOTYzLTYzLjQ3LDEzLjEyNi0xMTEuMTQzLDIzLjM5Mi0xNjEuNzczICAgICBjLTE3LjQ4LTI5LjQ2MiwyLjA5OC04OC42NzMsMzguOTY1LTc0LjA4NWM0NS4zNTQsMTcuOTU3LTM5LjMxNSwxMDkuNDI3LDE3LjU0NCwxMjAuODY5ICAgICBjNTkuMzM4LDExLjkxOCw4My41ODgtMTAzLjAwNyw0Ni43ODQtMTQwLjM4M2MtNTMuMjA0LTUzLjk2Ny0xNTQuNzgxLTEuMjQtMTQyLjI5LDc2LjAyNGMzLjA1MSwxOC44NzksMjIuNTM0LDI0LjYsNy43ODcsNTAuNjkzICAgICBjLTM0LjAzOS03LjUwMS00NC4yMDktMzQuMzg5LTQyLjkwNi03MC4xNzZjMi4wOTgtNTguNTc1LDUyLjYzMi05OS41NzUsMTAzLjMyNS0xMDUuMjY0ICAgICBjNjQuMTA1LTcuMTgzLDEyNC4yMzgsMjMuNTE5LDEzMi41MzMsODMuODFDMzgwLjg4MSwyNTQuNTc4LDM0Mi41ODMsMzI4LjMxMywyNzQuMDkyLDMyMy4wMDV6IiBmaWxsPSIjZTc2MTViIi8+CgkJPC9nPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" alt="" title=""></a></li>-->
+					<li class="animated wow fadeInRight"data-wow-delay=".3s"><a href="https://github.com/mhiland247" target="_blank"><img src="{% static 'mythings/michelle/img2/github.png' %}" alt="" title=""></a></li>
+                                        <li class="animated wow fadeInRight" data-wow-delay=".2s"><a href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41" target="_blank"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ5LjY1MiA0OS42NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5LjY1MiA0OS42NTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTI5LjM1LDIxLjI5OGMtMi4xMjUsMC0zLjA3NCwxLjE2OC0zLjYwNSwxLjk4OHYtMS43MDRoLTQuMDAyYzAuMDUyLDEuMTI4LDAsMTIuMDQxLDAsMTIuMDQxaDQuMDAydi02LjcyNyAgICAgYzAtMC4zNTksMC4wMjMtMC43MiwwLjEzMS0wLjk3N2MwLjI5LTAuNzIsMC45NDgtMS40NjUsMi4wNTQtMS40NjVjMS40NDgsMCwyLjAyNywxLjEwNCwyLjAyNywyLjcyNHY2LjQ0Mmg0LjAwMmgwLjAwMXYtNi45MDUgICAgIEMzMy45NTgsMjMuMDE5LDMxLjk4MywyMS4yOTgsMjkuMzUsMjEuMjk4eiBNMjUuNzQyLDIzLjMyOGgtMC4wMjVjMC4wMDgtMC4wMTQsMC4wMi0wLjAyNywwLjAyNS0wLjA0MVYyMy4zMjh6IiBmaWxsPSIjZTg2MTViIi8+CgkJCTxyZWN0IHg9IjE1LjUyMyIgeT0iMjEuNTgyIiB3aWR0aD0iNC4wMDIiIGhlaWdodD0iMTIuMDQxIiBmaWxsPSIjZTg2MTViIi8+CgkJCTxwYXRoIGQ9Ik0yNC44MjYsMEMxMS4xMzcsMCwwLDExLjEzNywwLDI0LjgyNmMwLDEzLjY4OCwxMS4xMzcsMjQuODI2LDI0LjgyNiwyNC44MjZjMTMuNjg4LDAsMjQuODI2LTExLjEzOCwyNC44MjYtMjQuODI2ICAgICBDNDkuNjUyLDExLjEzNywzOC41MTYsMCwyNC44MjYsMHogTTM3Ljk5MSwzNi4wNTVjMCwxLjA1Ni0wLjg3NiwxLjkxLTEuOTU5LDEuOTFIMTMuNDUxYy0xLjA4LDAtMS45NTctMC44NTQtMS45NTctMS45MVYxMy4yMTEgICAgIGMwLTEuMDU1LDAuODc3LTEuOTEsMS45NTctMS45MWgyMi41ODFjMS4wODIsMCwxLjk1OSwwLjg1NiwxLjk1OSwxLjkxVjM2LjA1NXoiIGZpbGw9IiNlODYxNWIiLz4KCQkJPHBhdGggZD0iTTE3LjU1MSwxNS43NzdjLTEuMzY4LDAtMi4yNjQsMC44OTgtMi4yNjQsMi4wOGMwLDEuMTU1LDAuODY5LDIuMDgsMi4yMTEsMi4wOGgwLjAyNmMxLjM5NiwwLDIuMjY1LTAuOTI1LDIuMjY1LTIuMDggICAgIEMxOS43NjIsMTYuNjc2LDE4LjkyMSwxNS43NzcsMTcuNTUxLDE1Ljc3N3oiIGZpbGw9IiNlODYxNWIiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" alt="" title=""></a></li>
+                                        <li class="animated wow fadeInRight" data-wow-delay=".1s"><a href="https://www.instagram.com/michellehiland/" target="_blank"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ5LjY1MiA0OS42NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5LjY1MiA0OS42NTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8Zz4KCQkJPHBhdGggZD0iTTI0LjgyNSwyOS43OTZjMi43MzksMCw0Ljk3Mi0yLjIyOSw0Ljk3Mi00Ljk3YzAtMS4wODItMC4zNTQtMi4wODEtMC45NC0yLjg5N2MtMC45MDMtMS4yNTItMi4zNzEtMi4wNzMtNC4wMjktMi4wNzMgICAgIGMtMS42NTksMC0zLjEyNiwwLjgyLTQuMDMxLDIuMDcyYy0wLjU4OCwwLjgxNi0wLjkzOSwxLjgxNS0wLjk0LDIuODk3QzE5Ljg1NCwyNy41NjYsMjIuMDg1LDI5Ljc5NiwyNC44MjUsMjkuNzk2eiIgZmlsbD0iI2U4NjE1YiIvPgoJCQk8cG9seWdvbiBwb2ludHM9IjM1LjY3OCwxOC43NDYgMzUuNjc4LDE0LjU4IDM1LjY3OCwxMy45NiAzNS4wNTUsMTMuOTYyIDMwLjg5MSwxMy45NzUgMzAuOTA3LDE4Ljc2MiAgICAiIGZpbGw9IiNlODYxNWIiLz4KCQkJPHBhdGggZD0iTTI0LjgyNiwwQzExLjEzNywwLDAsMTEuMTM3LDAsMjQuODI2YzAsMTMuNjg4LDExLjEzNywyNC44MjYsMjQuODI2LDI0LjgyNmMxMy42ODgsMCwyNC44MjYtMTEuMTM4LDI0LjgyNi0yNC44MjYgICAgIEM0OS42NTIsMTEuMTM3LDM4LjUxNiwwLDI0LjgyNiwweiBNMzguOTQ1LDIxLjkyOXYxMS41NmMwLDMuMDExLTIuNDQ4LDUuNDU4LTUuNDU3LDUuNDU4SDE2LjE2NCAgICAgYy0zLjAxLDAtNS40NTctMi40NDctNS40NTctNS40NTh2LTExLjU2di01Ljc2NGMwLTMuMDEsMi40NDctNS40NTcsNS40NTctNS40NTdoMTcuMzIzYzMuMDEsMCw1LjQ1OCwyLjQ0Nyw1LjQ1OCw1LjQ1N1YyMS45Mjl6IiBmaWxsPSIjZTg2MTViIi8+CgkJCTxwYXRoIGQ9Ik0zMi41NDksMjQuODI2YzAsNC4yNTctMy40NjQsNy43MjMtNy43MjMsNy43MjNjLTQuMjU5LDAtNy43MjItMy40NjYtNy43MjItNy43MjNjMC0xLjAyNCwwLjIwNC0yLjAwMywwLjU2OC0yLjg5NyAgICAgaC00LjIxNXYxMS41NmMwLDEuNDk0LDEuMjEzLDIuNzA0LDIuNzA2LDIuNzA0aDE3LjMyM2MxLjQ5MSwwLDIuNzA2LTEuMjEsMi43MDYtMi43MDR2LTExLjU2aC00LjIxNyAgICAgQzMyLjM0MiwyMi44MjMsMzIuNTQ5LDIzLjgwMiwzMi41NDksMjQuODI2eiIgZmlsbD0iI2U4NjE1YiIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" alt="" title=""></a></li>
+					 <li class="animated wow fadeInRight" data-wow-delay="0s"><a href="https://www.facebook.com/michelleahiland" target="_blank"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjMycHgiIGhlaWdodD0iMzJweCIgdmlld0JveD0iMCAwIDQ5LjY1MiA0OS42NTIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5LjY1MiA0OS42NTI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMjQuODI2LDBDMTEuMTM3LDAsMCwxMS4xMzcsMCwyNC44MjZjMCwxMy42ODgsMTEuMTM3LDI0LjgyNiwyNC44MjYsMjQuODI2YzEzLjY4OCwwLDI0LjgyNi0xMS4xMzgsMjQuODI2LTI0LjgyNiAgICBDNDkuNjUyLDExLjEzNywzOC41MTYsMCwyNC44MjYsMHogTTMxLDI1LjdoLTQuMDM5YzAsNi40NTMsMCwxNC4zOTYsMCwxNC4zOTZoLTUuOTg1YzAsMCwwLTcuODY2LDAtMTQuMzk2aC0yLjg0NXYtNS4wODhoMi44NDUgICAgdi0zLjI5MWMwLTIuMzU3LDEuMTItNi4wNCw2LjA0LTYuMDRsNC40MzUsMC4wMTd2NC45MzljMCwwLTIuNjk1LDAtMy4yMTksMGMtMC41MjQsMC0xLjI2OSwwLjI2Mi0xLjI2OSwxLjM4NnYyLjk5aDQuNTZMMzEsMjUuN3ogICAgIiBmaWxsPSIjZTg2MTViIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" alt="" title=""></a></li>
+                                </ul>
+                        </div>
+
+                        <span class="burger_icon">menu</span>
+                </div>
+        </header>
+        <!--  End Header Section  -->
+
+		{% block content %}
+		{% endblock %}
+
+</body>
+    
+     <script src="{% static 'mythings/michelle/js2/lead.js' %}"></script>
+
+</html>
