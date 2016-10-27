@@ -37,10 +37,10 @@ urlpatterns = [
     url(r'^thingslist/$', views.things_list, name='things_list'),
     #end restapi pracice
     #angular.js
-    #url(r'^lead/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
-    url(r'^leads/$', LeadList.as_view(), name='lead-list'),
-    url(r'^thing/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
-    url(r'^thing/$', ThingList.as_view(), name='thing-list')
+    url(r'^lead/(?P<pk>[0-9a-zA-Z_-]+)$', views.LeadDetail, name='lead_detail'),
+    url(r'^leads/$', views.LeadList, name='lead_list'),
+    url(r'^thing/(?P<pk>\d+)$', views.ThingDetail, name='thing_detail'),
+    url(r'^allthings/$', views.ThingList, name='thing_list'),
 
     #url(r'^', include(things_urls)),
    # url(r'^leads', include(leads_urls)),
