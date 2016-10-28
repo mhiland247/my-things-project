@@ -22,7 +22,7 @@ from rest_framework.decorators import api_view
 from .serializers import UserSerializer, ThingsSerializer, TasksSerializer, LeadSerializer
 # Create your views here.
 
-"""Angular.js"""
+"""Angular.js
 #read-only endpoints to represent a collection of model instances.
 class ThingsList(generics.ListCreateAPIView):
     model = Post
@@ -56,7 +56,7 @@ class LeadDetail(generics.RetrieveAPIView):
     serializer_class = LeadSerializer
     permission_classes = [
         permissions.AllowAny
-    ]
+    ]"""
 
 
 """End of Angular.js"""
