@@ -3,26 +3,38 @@ import json
 import operator
 from django.contrib.sites.shortcuts import get_current_site
 from django.contrib.sites.models import Site
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseNotFound, HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect, render_to_response
-from django.utils import timezone
-from .models import Post, Tag, ContactEntry, UserProfile, Lead, Task
 from django.contrib.auth.decorators import login_required
-from django.views.decorators.csrf import csrf_protect, requires_csrf_token
-from django.template import RequestContext
-from django.http import HttpResponseNotFound, HttpResponse, HttpResponseRedirect
-from .forms import UserForm, UserProfileForm
+from django.utils import timezone
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
+from django.views.decorators.csrf import csrf_protect, requires_csrf_token
+from django.template import RequestContext, Context
+from django.core.mail import send_mail, BadHeaderError
+from django.template.loader import get_template
+#restframework imports
 from rest_framework import viewsets, authentication, permissions, status, generics
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view
+
+from .models import Post, Tag, UserProfile, Lead, Task
+from .forms import UserForm, UserProfileForm
 from .serializers import UserSerializer, ThingsSerializer, TasksSerializer, LeadSerializer
 # Create your views here.
 
-"""Angular.js
+"""Angular.js"""
+
+class ThingsViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.all().order_by('-published_date')
+    serializer_class = ThingsSerializer
+
+class LeadViewSet(viewsets.ModelViewSet):
+    queryset = Lead.objects.all()
+    serializer_class = LeadSerializer
+"""
 #read-only endpoints to represent a collection of model instances.
 class ThingsList(generics.ListCreateAPIView):
     model = Post
@@ -71,7 +83,11 @@ def index(request):
     fourth_logo = Post.objects.filter(tags__tag='packaging_label')
     fifth_item = Post.objects.filter(tags__tag='muscle_diagram')
     sixth_item = Post.objects.filter(tags__tag='businesscard')
-    return render(request, 'mythings/michelle/index.html', {'portfolio' : portfolio, 'first_logo' : first_logo, 'second_logo' : second_logo, 'third_logo' : third_logo, 'fourth_logo' : fourth_logo, 'fifth_item' : fifth_item, 'sixth_item' : sixth_item})
+    return render(request, 'mythings/michelle/index.html',
+                  {'portfolio': portfolio, 'first_logo': first_logo, 'second_logo': second_logo,
+                   'third_logo': third_logo, 'fourth_logo': fourth_logo, 'fifth_item': fifth_item,
+                   'sixth_item': sixth_item})
+    #return render(request, 'mythings/mysite/index.html')
 
 @csrf_protect
 #@login_required
@@ -138,6 +154,17 @@ def lead(request):
             content_type="application/json"
         )
 
+def send_mail(request):
+    subject = "New email submission",
+    message = "new contact"
+    from_email = request.Post.get('email')
+    if new_email:
+        try:
+            send_mail(subject, message, from_email, ['michelle.hiland@gmail.com'])
+        except BadHeaderError:
+            return HttpResponse('Invalid header found.')
+        return HttpResponse('success')
+
 
 def google(request):
     return render(request, 'mythings/michelle/googled9f8c9df384d9723.html')
@@ -153,32 +180,9 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
 
-class ThingsViewSet(viewsets.ModelViewSet):
-    queryset = Post.objects.all().order_by('-published_date')
-    serializer_class = ThingsSerializer
-
 class TagsViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all().filter(tags__tag='portfolio')
     serializer_class = ThingsSerializer
- 
-@api_view(['GET', 'POST'])
-def things_list(request):
-    """
-    List all things or create a new thing
-    """
-    if request.method == 'GET':
-        things = Post.objects.all()
-        serializer = ThingsSerializer(things, many=True, context={'request': request})
-        return Response(serializer.data)
-    elif request.method == 'POST':
-        serializer = ThingsSerializer(data=request.DATA)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        else:
-            return Response(
-                serilaizer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 
 @csrf_protect       
 @api_view(['GET', 'POST'])
@@ -238,6 +242,53 @@ def task_detail(request, pk):
         #delete task
         task.delete()
         return Response(status=status.HTTP_202_NO_CONTENT)
+
+    """@api_view(['GET', 'POST'])
+    def things_list(request):
+
+        #List all things or create a new thing
+
+        if request.method == 'GET':
+            things = Post.objects.all()
+            serializer = ThingsSerializer(things, many=True, context={'request': request})
+            return Response(serializer.data)
+        elif request.method == 'POST':
+            serializer = ThingsSerializer(data=request.DATA)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_201_CREATED)
+            else:
+                return Response(
+                    serilaizer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @api_view(['GET', 'PUT', 'DELETE'])
+    def things_detail(request, pk):
+
+        #Get, update or delete a specific task
+
+        # try to get the task
+        try:
+            thing = Post.objects.get(pk=pk)
+        except Post.DoesNotExsist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        if request.method == 'GET':
+            serializer = ThingsSerializer(thing)
+            return Response(serializer.data)
+
+        elif request.method == 'PUT':
+            serializer = ThingsSerializer(thing, data=request.DATA)
+            if serializer.is_vaild():
+                serializer.save()
+                return Response(serializer.data)
+            else:
+                return Response(
+                    serilaizer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+        elif request.method == 'DELETE':
+            # delete task
+            thing.delete()
+            return Response(status=status.HTTP_202_NO_CONTENT)"""
 
     """End Rest Framework Practice"""
 

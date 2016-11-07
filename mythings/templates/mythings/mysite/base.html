@@ -1,0 +1,99 @@
+{% load staticfiles %}
+{% load seo %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link src="{% static 'mythings/mysite/css/main.css' %}" rel="stylesheet">
+    <!-- typography -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'mythings/mysite/js/main.js' %}"></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-light navbar-full">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      <a href="#home"><img src="{% static 'mythings/mysite/img/logo.png' %}"></a>
+      </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <a id="logo-mobile" class="navbar-brand" href="#"><img id="logo-mobile" src="{% static 'mythings/mysite/img/logo.png' %}"></a>
+        <ul class="nav navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#">about</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">testimonies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">contact</a>
+          </li>
+        </ul>
+        <ul id="social-right" class="nav navbar-nav">
+           <li class="nav-item">
+            <a id="social-mobile" class="nav-link social-fluid" href="https://github.com/mhiland247"><img id="social-mobile" class="social-fluid" src="{% static 'mythings/mysite/img/github.png' %}"></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41"><img src="{% static 'mythings/mysite/img/linkedin.png' %}"></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/michelleahiland"><img src="{% static 'mythings/mysite/img/facebook.png' %}"></a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/michellehiland/"><img src="{% static 'mythings/mysite/img/instagram.png' %}"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+        {% block content %}
+        {% endblock %}
+
+ <!--  Footer Section  -->
+        <footer class="my-footer">
+          <div class="row">
+            <div class="col-xs-3">
+
+            </div>
+            <div class="col-xs-2">
+                <img class="m-x-auto d-block" src="{% static 'mythings/mysite/img/g_footer.png' %}" alt="" title="">
+            </div>
+            <div class="col-xs-2">
+                <img class="m-x-auto d-block" src="{% static 'mythings/mysite/img/r_footer.png' %}" alt="" title="">
+            </div>
+            <div class="col-xs-2">
+                <img class="m-x-auto d-block" src="{% static 'mythings/mysite/img/p_footer.png' %}" alt="" title="">
+            </div>
+             <div class="col-xs-3">
+
+            </div>
+          </div>
+          <div class="row" >
+              <div class="col-xs-12">
+                  <p class="copyright text-xs-center">© 2016 <strong>Michelle Hiland</strong></a>. All Rights Reserved</p>
+              </div>
+          </div>
+
+        </footer>
+	<!--  End Footer Section  -->
+    </div> <!-- end container -->
+  </body>
+</html>

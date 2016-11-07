@@ -1,0 +1,145 @@
+/* navbar */
+/*header*/
+/* content fonts */
+/* responsive breakpoints */
+/* responsive elements */
+/* contact page */
+/* portfolio */
+/*testimonials */
+/* footer */
+/* mobile grid */
+/*navigation*/
+@media only screen and (max-width: 543px) {
+  #logo-mobile {
+    display: none !important; }
+
+  #social-mobile {
+    margin-left: 0em !important; }
+
+  #social-right {
+    display: flex !important; } }
+@media only screen and (max-width: 767px) {
+  .social-fluid {
+    margin-left: 1em !important; }
+
+  #logo-mobile {
+    margin-right: 0em !important; } }
+@media only screen and (max-width: 1199px) {
+  .social-fluid {
+    margin-left: 2em !important; } }
+/*header section*/
+@media only screen and (max-width: 991px) {
+  .h1-shrink {
+    font-size: 30px; } }
+@media only screen and (max-width: 767px) {
+  .h1-shrink {
+    font-size: 20px; }
+
+  .subhead-shrink {
+    font-size: 14px; }
+
+  .card-responsive {
+    font-size: 1em !important; } }
+@media only screen and (max-width: 543px) {
+  .h1-shrink {
+    font-size: 16px; }
+
+  .h1-right {
+    text-align: right;
+    margin-top: -25px; }
+
+  .h1-left {
+    text-alight: left; }
+
+  .image-header {
+    padding-top: 100px; }
+
+  .subhead-shrink {
+    display: none; }
+
+  .card-img-top {
+    width: 100% !important; }
+
+  .card-responsive {
+    font-size: 1.5em !important; }
+
+  .text-mobile {
+    font-size: 14px; } }
+/* navbar */
+.navbar-nav .nav-item {
+  margin-left: 2em !important;
+  margin-top: 1em !important; }
+
+.navbar-brand {
+  margin-right: 5em !important; }
+
+.social-fluid {
+  margin-left: 4em !important; }
+
+/* font size */
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px; }
+
+h1 {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 900; }
+
+h4 {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 100; }
+
+/* header */
+.header {
+  padding-top: 50px; }
+
+.move-up {
+  margin-top: -100px; }
+
+/*about*/
+.about-section {
+  padding-top: 50px;
+  padding-bottom: 25px; }
+
+.hobbie-section {
+  padding-top: 50px;
+  padding-bottom: 25px; }
+
+/* portfolio */
+.portfolio {
+  padding-top: 50px !important;
+  padding-bottom: 50px !important;
+  padding-top: 50px;
+  padding-bottom: 25px; }
+
+/*testimonial */
+#testimonialCarousel {
+  margin: 0 auto; }
+
+.carousel-item blockquote {
+  padding-right: 160px;
+  padding-left: 160px; }
+
+.carousel {
+  background-color: white; }
+
+.carousel .item {
+  background-color: white; }
+
+.carousel-control.right, .carousel-control.left {
+  color: black;
+  background-image: none !important;
+  background-color: white; }
+
+/* contact page */
+.contact-icons {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+/* footer */
+.my-footer {
+  padding-top: 100px;
+  padding-bottom: 100px; }
+
+.copyright {
+  padding-top: 25px; }

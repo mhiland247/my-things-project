@@ -6,18 +6,8 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'things', views.ThingsViewSet)
+router.register(r'leads', views.LeadViewSet)
 #router.register(r'portfolio', views.PortfolioViewSet, base_name='portfolio')
-
-#things_urls = urlpatterns('',
-#    url(r'^/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
-#    url(r'^$', ThingList.as_view(), name='thing-list')
-#)
-
-#leads_urls = patterns('',
-#    url(r'^/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
-#    url(r'^$', LeadList.as_view(), name='lead-list')
-#)
-
 
 urlpatterns = [
     #original urls for mysite
@@ -34,13 +24,14 @@ urlpatterns = [
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^tasks/$', views.task_list, name='task_list'),
     url(r'^tasks/(?P<pk>[0-9]+)/$', views.task_detail, name='task_detail'),
-    url(r'^thingslist/$', views.things_list, name='things_list'),
+    #url(r'^things/list/$', views.things_list, name='things_list'),
+    #url(r'^things/list/(?P<pk>[0-9]+)$', views.things_detail, name='things_detail'),
     #end restapi pracice
     #angular.js
     #url(r'^lead/(?P<pk>[0-9a-zA-Z_-]+)$', LeadDetail.as_view(), name='lead-detail'),
-    """url(r'^leads/$', views.LeadList, name='lead-list'),
-    url(r'^thing/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
-    url(r'^thing/$', ThingList.as_view(), name='thing-list')"""
+    #url(r'^leads/$', views.LeadList, name='lead-list'),
+    #url(r'^thing/(?P<pk>\d+)$', ThingDetail.as_view(), name='thing-detail'),
+    #url(r'^thing/$', ThingList.as_view(), name='thing-list')"""
 
     #url(r'^', include(things_urls)),
    # url(r'^leads', include(leads_urls)),

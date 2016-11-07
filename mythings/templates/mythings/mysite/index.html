@@ -1,0 +1,80 @@
+{% extends 'mythings/mysite/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+    <!-- header section -->
+    <div class="row header">
+      <div class="col-sm-3">
+        <h1 class="h1-shrink h1-left">UI/UX Designer</h1>
+        <p class="subhead-shrink">Passion for crafting
+        engaging and functional
+        user experiences
+        </p>
+        <!--<img class="img-fluid pull-xs-left" src="assets/img/design.png">-->
+      </div>
+      <div class="col-sm-6">
+        <!--<img class="img-fluid m-x-auto d-block" src="assets/img/protrait.png">-->
+      </div>
+      <div class="col-sm-3">
+        <h1 class="h1-shrink h1-right">Front-End Developer</h1>
+        <p class="subhead-shrink">Focus on single page applications
+        and clean yet elegant code
+        </p>
+       <!-- <img class="img-fluid pull-xs-right" src="assets/img/developer.png">-->
+      </div>
+  </div> <!-- end row -->
+
+   <div class="row">
+       <div class="col-xs-2">
+
+       </div>
+       <div class="col-xs-8 move-up">
+           <img class="img-fluid m-x-auto d-block image-header" src="{% static 'mythings/mysite/img/header.png' %}">
+       </div>
+       <div class="col-x2-2">
+
+       </div>
+   </div>
+
+<!--latest work section-->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h4 class="text-xs-center portfolio">SOME OF MY LATEST WORK</h4>
+      </div>
+    </div>  <!-- end row -->
+
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/tt.jpg' %}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title card-responsive">Things Theory</h4>
+            <p class="card-text">Website Design</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/strangebyrds.jpg' %}" alt="">
+          <div class="card-block">
+            <h4 class="card-title card-responsive">Strangebyrds</h4>
+            <p class="card-text">Website Development</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/thrive.jpg' %}" alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title card-responsive">Thrive Tribre</h4>
+            <p class="card-text">Website Development </p>
+          </div>
+        </div>
+      </div>
+
+    </div> <!--end of row -->
+
+ {% endblock %}
+
