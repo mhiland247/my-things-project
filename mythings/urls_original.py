@@ -29,12 +29,13 @@ urlpatterns = [
     url(r'^googled9f8c9df384d9723.html/$', views.google, name='google'),
       # For lead posting
     url(r'^lead/$', views.lead, name='lead'),
+
     # automatic url routing and browsable api
     url(r'^', include(router.urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^tasks/$', views.task_list, name='task_list'),
     url(r'^taks/(?P<pk>[0-9]+)/$', views.task_detail, name='task_detail'),
-     url(r'^thingslist/$', views.things_list, name='things_list'),
+    url(r'^thingslist/$', views.things_list, name='things_list'),
    # url(r'^logos/$', views.tag_logo, name='logos')
    # url(r'^register/$', views.register, name='register'),
     #url(r'^login/$', views.user_login, name='login'),

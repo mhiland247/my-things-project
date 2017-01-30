@@ -1,0 +1,29 @@
+{% extends 'mythings/mysite/base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+
+<!-- Passion list -->
+{% for post in posts %}
+<div class="row">
+
+  <div class="col-xs-2"></div>
+
+   <div class="col-xs-8">
+     <div class="tag-border">
+     <!-- <a href="{% url 'post_detail_name' post.url_name %}">-->
+      <div id="post-title"> {{ post.title }}</div>
+      <img class="img-fluid mx-auto d-block post-img" src="{{ post.get_image }}">
+      <div id="image-date"> {{post.image_date}}</div>
+      <div id="post-description"> {{ post.description|linebreaks }} </div>
+      <div data-href="https://developers.facebook.com/docs/plugins/" data-layout="button"></div>
+     </div>
+    <hr class="post-divider"></hr>
+   </div>
+
+  <div class="col-xs-2"></div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

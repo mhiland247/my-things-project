@@ -1,124 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+{% extends 'mythings/mysite/base.html' %}
+{% load staticfiles %}
+{% block content %}
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Custom CSS -->
-     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <!-- typography -->
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  </head>
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-light navbar-full">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-      <a href="#home"><img src="assets/img/logo.png"></a>
-      </button>
-      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-        <a id="logo-mobile" class="navbar-brand" href="#"><img id="logo-mobile" src="assets/img/logo.png"></a>
-        <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">testimonies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">contact</a>
-          </li>
-        </ul>
-        <ul id="social-right" class="nav navbar-nav">
-           <li class="nav-item">
-            <a id="social-mobile" class="nav-link social-fluid" href="https://github.com/mhiland247"><img id="social-mobile" class="social-fluid" src="assets/img/github.png"></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link
-            " href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41"><img src="assets/img/linkedin.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com/michelleahiland"><img src="assets/img/facebook.png"></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/michellehiland/"><img src="assets/img/instagram.png"></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+<!--Contact section -->
     <div class="row header">
-        <div class="col-xs-6">
-            <h1>Contact Me</h1>
+        <div id="contact-padding" class="col-xs-6">
+            <div class="contact-header">Contact Me</div>
             <ul class="list-unstyled">
-                <li class="contact-icons"><a target="_blank" href="https://www.facebook.com/michelleahiland"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i> Find me on Facebook</a></li>
-                <li class="contact-icons"><a target="_blank" href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i> Connect on LinkedIn</a></li>
-                <li class="contact-icons"><a target="_blank"href="http://michellehiland.com/tag/passion/"><i class="fa fa-rss-square fa-3x" aria-hidden="true"></i> Check out my blog</a></li>
+                <li class="contact-icons"><a class="red-fa" target="_blank" href="https://www.facebook.com/michelleahiland"><i class="fa fa-facebook-square fa-3x red-fa" aria-hidden="true"></i> Find me on Facebook</a></li>
+                <li class="contact-icons"><a class="red-fa" target="_blank" href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41"><i class="fa fa-linkedin-square fa-3x red-fa" aria-hidden="true"></i> Connect on LinkedIn</a></li>
+                <li class="contact-icons"><a class="red-fa" target="_blank" href="http://michellehiland.com/tag/passion/"><i class="fa fa-rss-square fa-3x red-fa" aria-hidden="true"></i> Check out my blog</a></li>
             </ul>
         </div>
-         <div class="col-xs-6">
-            <img src="assets/img/protrait.png">
+         <div id="contact-padding" class="col-xs-6">
+            <img id="contact-image" class="img-fluid mx-auto d-block" src="{% static 'mythings/mysite/img/protrait.png' %}">
          </div>
     </div>
 
 
      <div class="row">
          <div class="col-xs-12">
-            <form>
-                 <div class="form-group">
-                    <label for="formGroupExampleInput">Your Name:</label>
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+            <form id="contact-post" enctype="multipart/form-data" action="/contact_lead/" method="post"> {% csrf_token %}
+                <div id="contact">
+                <!--<div id="the_name" class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name">
                 </div>
 
-              <div class="form-group">
-                <label for="exampleInputEmail1">Your Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+             <div id="the_email" class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
+              </div>-->
 
-                <div class="form-group">
-                    <label for="exampleTextarea">Your Message</label>
-                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                <div id="the_contact" class="form-group">
+                    <label class="contact-message" for="message">Send me a message with your contact information!</label>
+                    <textarea type=text" class="form-control contact-border" id="message" rows="6"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Send</button>
+                <div id="results"></div> <!-- errors go here-->
+                <button id="submit-hide" type="submit" class="btn btn-danger">Send</button>
+                </div>
               </form>
+
+
+             <div class="text-xs-center thanks" id="thanks">
+                 {% for contact in all_contacts %}
+                    <strong>{{ contact.results }}</strong>
+                        <em>{{ contact.created_date }}</em>
+                 {% endfor %}
+             </div>
+
          </div>
      </div>
 
-    <!--  Footer Section  -->
-	<footer class="my-footer">
-      <div class="row">
-        <div class="col-xs-3">
-
-        </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/g_footer.png" alt="" title="">
-        </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/r_footer.png" alt="" title="">
-        </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/p_footer.png" alt="" title="">
-        </div>
-         <div class="col-xs-3">
-
-        </div>
-      </div>
-      <div class="row" >
-          <div class="col-xs-12">
-              <p class="copyright text-xs-center">© 2016 <strong>Michelle Hiland</strong></a>. All Rights Reserved</p>
-          </div>
-      </div>
-
-	</footer>
-   </div> <!--end container -->
-  </body>
-</html>
+    {% endblock %}

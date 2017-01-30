@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_aa&dr3x$_p(splcedsvog*%etxuww23chaajt&vo(*11_y7%4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['michellehiland.com', 'www.michellehiland.com', '172.31.19.107', '127.0.0.1']
 
@@ -48,7 +48,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ),
-   'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+   'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'PAGE_SIZE': 10,
 }
 

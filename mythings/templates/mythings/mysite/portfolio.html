@@ -1,136 +1,420 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Custom CSS -->
-     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <!-- typography -->
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
-      <script type="text/javascript" src="assets/js/main.js"></script>
-
-  </head>
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-light navbar-full">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-      <a href="#home"><img src="assets/img/logo.png"></a>
-      </button>
-      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-        <a id="logo-mobile" class="navbar-brand" href="#"><img id="logo-mobile" src="assets/img/logo.png"></a>
-        <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#testimonialCarousel">testimonies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">contact</a>
-          </li>
-        </ul>
-        <ul id="social-right" class="nav navbar-nav">
-           <li class="nav-item">
-            <a id="social-mobile" class="nav-link social-fluid" href="https://github.com/mhiland247"><img id="social-mobile" class="social-fluid" src="assets/img/github.png"></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link
-            " href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41"><img src="assets/img/linkedin.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com/michelleahiland"><img src="assets/img/facebook.png"></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/michellehiland/"><img src="assets/img/instagram.png"></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+{% extends 'mythings/mysite/base.html' %}
+{% load staticfiles %}
+{% block content %}
 
      <!-- portfolio
       <div class="row">
-          <div class="col-sm-12">
-            <h2 class="text-xs-center portfolio"></h2>
+          <div class="col-xs-12">
+            <div id="portfolio-header" class="text-xs-center">Portfolio<div>
           </div>
       </div>-->
 
      <!-- first row -->
-     <div class="row portfolio">
+     <div id="portfolio1" class="row">
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="assets/img/tt.jpg" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/tt.jpg' %}" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title card-responsive">Things Theory</h4>
-            <p class="card-text">Website Design</p>
+              <a id="portfolio-link" href="http://www.thingstheory.com/" target="_blank"> <h4 class="card-title card-responsive">Things Theory</h4></a>
+	     <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapsett" aria-expanded="false" aria-controls="collapseExample">
+                Website Design & Development
+                </a>
+            </p>
+            <div class="collapse" id="collapsett">
+                <div class="card card-block">
+                    Designed mock-ups for landing page and individual pages using Adobe Illustrator. Developed landing page using Django, Bootstrap, and mySQL.
+                 </div>
+                 <img id="img-zoom" class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/tt_single.jpg' %}" alt="Card image cap">
+            </div> 
           </div>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="assets/img/strangebyrds.jpg" alt="">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/strangebyrds.jpg' %}" alt="">
           <div class="card-block">
-            <h4 class="card-title card-responsive">Strangebyrds</h4>
-            <p class="card-text">Website Development</p>
+              <a id="portfolio-link" href="http://strangebyrds.com/"target="_blank"> <h4 class="card-title card-responsive">Strangebyrds</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseStrangebyrds" aria-expanded="false" aria-controls="collapseExample">
+                Website Design & Development
+                </a>
+            </p>
+            <div class="collapse" id="collapseStrangebyrds">
+                <div class="card card-block">
+                    Designed mock-ups for mobile and home page using Adobe Illustrator. Developed website using WordPress Canvas theme and various plugins.
+                 </div>
+                 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/strangebyrds_mobile_final.png' %}" alt="Card image cap">
+            </div>
           </div>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="assets/img/thrive.jpg" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/thrive.jpg' %}" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title card-responsive">Thrive Tribe</h4>
-            <p class="card-text">Website Development </p>
+              <a id="portfolio-link" href="http://www.thrivetribe.com/" target="blank"> <h4 class="card-title card-responsive">Thrive Tribe</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseThrive" aria-expanded="false" aria-controls="collapseExample">
+                Website Design & Development
+                </a>
+            </p>
+            <div class="collapse" id="collapseThrive">
+                <div class="card card-block">
+                    Used mock-ups to develop e-ecommerce website using Wordpress WooCommerce plugin, Instafeed plugin, and custom jQuery slider. Code below shows the custom slider.
+                 </div>
+                 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/tt_code.png' %}" alt="Card image cap">
+            </div>
           </div>
         </div>
       </div>
     </div> <!--end of row -->
 
      <!-- second row -->
-     <div class="row portfolio">
+     <div id="portfolio2" class="row">
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="assets/img/gidea.png" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/gidea.png' %}" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title card-responsive">Great Ideations</h4>
-            <p class="card-text">Website Development</p>
+              <a id="portfolio-link" href="http://www.greatideations.com/" target="blank"> <h4 class="card-title card-responsive">Great Ideations</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseGI" aria-expanded="false" aria-controls="collapseExample">
+                Website Design & Development
+                </a>
+            </p>
+            <div class="collapse" id="collapseGI">
+                <div class="card card-block">
+                    Customized Bootstrap theme and developed website using Django, Gunicorn, and Ningx. Hosted on AWS.
+                 </div>
+            </div>	      
           </div>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="assets/img/cannabis.png" alt="">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/cannabis.png' %}" alt="">
           <div class="card-block">
-            <h4 class="card-title card-responsive">Holistic Cannabis Network</h4>
-            <p class="card-text">Website Development</p>
+              <a id="portfolio-link" href="http://holisticcannabisnetwork.com/" target="blank"> <h4 class="card-title card-responsive">Holistic Cannabis Network</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseHCN" aria-expanded="false" aria-controls="collapseExample">
+                Web Dev & Graphic Design
+                </a>
+            </p>
+            <div class="collapse" id="collapseHCN">
+                <div class="card card-block">
+                    Developed In the News page on Wordpress website and created content for blog.
+                 </div>
+                <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/News.png' %}" alt="Card image cap">
+                <div class="card card-block">
+                    Created business cards and updated logo featured on business cards.
+                 </div>
+                <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/business_card_sample.jpg' %}" alt="Card image cap">
+                <div class="card card-block">
+                    Created rack cards for advertising upcoming events and pdf downloads for email subscriptions.
+                 </div>
+                <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/rack.jpeg' %}" alt="Card image cap">
+            </div>
           </div>
         </div>
       </div>
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-fluid" src="assets/img/sm.png" alt="Card image cap">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/peakpro.png' %}" alt="Card image cap">
           <div class="card-block">
-            <h4 class="card-title card-responsive">Sadhaka Movement</h4>
-            <p class="card-text">Website Development </p>
+              <a id="portfolio-link" href="https://peakprofessionalpainting.com/" target="blank"> <h4 class="card-title card-responsive">Peak Pro Painting</h4></a>
+	       <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapsepeakpro" aria-expanded="false" aria-controls="collapseExample">
+                Social Media Management & SEO
+                </a>
+            </p>
+            <div class="collapse" id="collapsepeakpro">
+                <div class="card card-block">
+                    Posted 3 times a week on Facebook, Instagram, Pinterest, and Google+. Implemented SEO best practices on each page, tracked relevant keywords, and wrote monthly
+		    reports using metrics from Google Analytics.
+                 </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </div> <!--end 2nd row -->
+
+	<!--third row -->
+         <div class="row">
+            <div class="col-sm-4">
+                 <div class="card card-block">
+                    <blockquote class="card-blockquote">
+                      <p>I love running because it teaches me perseverance and humility, this pours into my passion for web development.</p>
+                      <!--<footer>
+                        <small class="text-muted">
+                           <cite title="Source Title">Front End Development</cite>
+                        </small>
+                      </footer>-->
+                    </blockquote>
+                </div>
+            </div>
+
+            <div id="portfolio-mobile" class="col-sm-4">
+                <div class="card card-block card-inverse card-red text-xs-center">
+                    <blockquote class="card-blockquote">
+                   	<div id="portfolio-header" class="card-title text-xs-center">Portfolio</div>
+                  	<footer>
+                     	    <small>
+                                <cite title="Source Title">Michelle Hiland</cite>
+                            </small>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                 <div class="card card-block text-xs-left">
+                    <blockquote class="card-blockquote">
+                      <p>I love working on challenging projects and seeing my work come to life.</p>
+                      <!--<footer>
+                        <small class="text-muted">
+                           <cite title="Source Title">UI/UX Designer</cite>
+                        </small>
+                      </footer>-->
+                    </blockquote>
+                 </div>
+            </div>
+
+        </div> <!-- end third row -->	
+
+         <!-- fourth row -->
+     <div id="portfolio3" class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/kdance.png' %}" alt="Card image cap">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://kinesisdance.com/" target="blank"> <h4 class="card-title card-responsive">Kinesis Dance</h4></a>
+	       <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapsekdance" aria-expanded="false" aria-controls="collapseExample">
+                Web Development & SEO
+                </a>
+            </p>
+            <div class="collapse" id="collapsekdance">
+                <div class="card card-block">
+                   Created custom mysql database to dynamically change calendar and classes. Updated database monthly.
+                    <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/kdance-data.png' %}" alt="Card image cap">
+                 </div>
+                 <div class="card card-block">
+                     Implemented SEO best practices using SEO Yoast, tracked relevant keywords, and posted content on Google+ 3 times a week.
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/512.png' %}" alt="">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://www.512solutions.com/" target="blank"> <h4 class="card-title card-responsive">5.12 Solutions</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapse512" aria-expanded="false" aria-controls="collapseExample">
+                Email Marketing, Social Media, SEO
+                </a>
+            </p>
+	    <div class="collapse" id="collapse512">
+                <div class="card card-block">
+                   Created bi-weekly emails to gain and retain customers using Constant Contact.
+                    <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/email.png' %}" alt="Card image cap">
+                 </div>
+                 <div class="card card-block">
+                    Created pop-up and link for email subscriptions. Implemented SEO best practices on Drupal website and tracked relevant keywords.
+                     <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/pop-up2.png' %}" alt="Card image cap">
+                </div>
+                 <div class="card card-block">
+                    Edited and posted weekly blogs. Posted 3 times a week on Facebook, LinkedIn and Google+.
+                     <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/blog.png' %}" alt="Card image cap">
+                 </div>
+                 <div class="card card-block">
+                    Using UX principles enhanced website for usability and clear flow of process. Added call to action buttons and links to questions.
+                 </div>
+                 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/buy_button.png' %}" alt="Card image cap">
+                 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/leader.png' %}" alt="Card image cap">
+            </div>	
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/sponge.png' %}" alt="Card image cap">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://spongetechnology.com/" target="blank"> <h4 class="card-title card-responsive">Sponge Technology</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseSponge" aria-expanded="false" aria-controls="collapseExample">
+                Web Dev & Graphic Design
+                </a>
+            </p>
+            <div class="collapse" id="collapseSponge">
+                <div class="card card-block">
+                    Edited website by adding photos, graphics, and enhancing the layout of each page.
+                 </div>
+                 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/sponge_cust.png' %}" alt="Card image cap">
+                 <div class="card card-block">
+                    Using Adobe Photoshop cut out and edited photos for website use.
+                 </div>
+                 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/loofah.jpg' %}" alt="Card image cap">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--end row -->
+
+      <!-- fourth row -->
+     <div id="portfolio3" class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/golden.png' %}" alt="Card image cap">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://goldenleafinn.com/" target="blank"> <h4 class="card-title card-responsive">Golden Leaf Inn</h4></a>
+ 	     <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseGolden" aria-expanded="false" aria-controls="collapseExample">
+               Web Development & SEO
+                </a>
+            </p>
+            <div class="collapse" id="collapseGolden">
+                <div class="card card-block">
+                    Implemented SEO best practices on each page using SEO Yoast, tracked relevant keywords, and wrote monthly reports using metrics from Google Analytics.
+                 </div>
+		<div class="card card-block">
+		Add photos to pages that were text only, added links and helped implement new booking system.
+                 </div>
+		<img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/golden_page.png' %}" alt="Card image cap">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/bvd.png' %}" alt="">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://www.bouldervalleydental.com/" target="blank"> <h4 class="card-title card-responsive">Boulder Valley Dental</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapsebvd" aria-expanded="false" aria-controls="collapseExample">
+                Adwords, Social, SEO, Web Dev
+                </a>
+            </p>
+            <div class="collapse" id="collapsebvd">
+                <div class="card card-block">
+                    Created Sleep Apena, Tour our office, and Sedation dentistry pages. Updated website as needed, added new members, created promotions.
+                 </div>
+                <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/bvd-teens.png' %}" alt="Card image cap">
+                <div class="card card-block">
+                     Implemented SEO best practices and tracked relevant keywords. Posted content 3 times a week on Google+.
+                 </div>
+                <div class="card card-block">
+                    Created, launched, monitored and updated AdWords campaign.
+                 </div>
+                <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/bvd-ads.png' %}" alt="Card image cap">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/packing_label.jpg' %}" alt="Card image cap">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://www.heatherschoice.com/" target="blank"> <h4 class="card-title card-responsive">Heather's Choice</h4></a>
+	      <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseheathers" aria-expanded="false" aria-controls="collapseExample">
+                Graphic Design
+                </a>
+            </p>
+            <div class="collapse" id="collapseheathers">
+                <div class="card card-block">
+		Made 14 traces of National Geographic maps and then turned those into package lables for Heather's Choice outdoor breakfast, lunch, and dinner meals.
+                </div>
+		<div class="card card-block">
+		Here is the trace.
+                </div>
+		<img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/bowknot_bend_trace.jpg' %}" alt="Card image cap">
+		<div class="card card-block">
+                Here is the corresponding packaging label front and back side.
+                </div>
+		<img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/Dinners-05.png' %}" alt="Card image cap">
+		<br>
+		 <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/Dinners-06.png' %}" alt="Card image cap">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--end row -->
+
+	 <!-- fifth row -->
+     <div id="portfolio4" class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/strive.png' %}" alt="Card image cap">
+          <div class="card-block">
+              <a id="portfolio-link" href="https://www.striveit.com/" target="blank"> <h4 class="card-title card-responsive">Strive IT</h4></a>
+             <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapseStriveIT" aria-expanded="false" aria-controls="collapseExample">
+               Web Dev, Social Media & SEO
+                </a>
+            </p>
+            <div class="collapse" id="collapseStriveIT">
+                <div class="card card-block">
+                    Posted 3 times a week on Facebook, Instagram, and Google+. Implemented SEO best practices on each page, tracked relevant keywords, and wrote monthly reports using metrics from Google Analytics.
+                 </div>
+                <div class="card card-block">
+                Updated photos on slider to look more professional, updated colors and layout of website for a better user experience.
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/coach.png' %}" alt="">
+          <div class="card-block">
+	    <a id="portfolio-link" href="https://coachmetrix.com/" target="blank"> <h4 class="card-title card-responsive">CoachMetrix</h4></a>
+              <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapsecoach" aria-expanded="false" aria-controls="collapseExample">
+                Web Dev, SEO, Email Campaign
+                </a>
+            </p>
+            <div class="collapse" id="collapsecoach">
+                <div class="card card-block">
+                    Updated website as needed, added blogs.
+                 </div>
+                <!--<img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/bvd-teens.png' %}" alt="Card image cap">-->
+                <div class="card card-block">
+                     Implemented SEO best practices and tracked relevant keywords. Posted content 3 times a week on Google+.
+                 </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-fluid" src="{% static 'mythings/mysite/img/sm.png' %}" alt="Card image cap">
+          <div class="card-block">
+              <a id="portfolio-link" href="http://sadhakamovement.com/" target="blank"> <h4 class="card-title card-responsive">Sadhaka Movement</h4></a>
+              <p class="card-text">
+                <a class="card-text" data-toggle="collapse" href="#collapsesdm" aria-expanded="false" aria-controls="collapseExample">
+                Website Customizations
+                </a>
+            </p>
+            <div class="collapse" id="collapsesdm">
+                <div class="card card-block">
+                Updated font, logos, images and content on multiple pages. Rearranged layout of each page to look more appealing to customers.
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!--end row -->
 
     <!--  Testimonials Section  -->
-	<div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+     <div class="row">
+          <div class="col-xs-12">
+            <div id="testimonial-header" class="text-xs-center">Testimonies<div>
+          </div>
+      </div>
+
+    <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
 <!-- Small dots to indicate number of slides and current slide -->
 
   <!-- Carousel Contents -->
@@ -178,49 +462,18 @@
 
   </div>
   <!-- Left Slide Button -->
-  <a class="left carousel-control" href="#testimonialCarousel" role="button" data-slide="prev">
-    <span class="icon-prev" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <!-- Right Slide Button -->
-  <a class="right carousel-control" href="#testimonialCarousel" role="button" data-slide="next">
-    <span class="icon-next" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+      <a class="left carousel-control" href="#testimonialCarousel" role="button" data-slide="prev">
+        <span class="icon-prev" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <!-- Right Slide Button -->
+      <a class="right carousel-control" href="#testimonialCarousel" role="button" data-slide="next">
+        <span class="icon-next" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
 
-</div> <!-- ./carousel -->
+  </div> <!-- ./carousel -->
 
 	<!--  End Testimonials Section  -->
 
-         <!--  Footer Section  -->
-	<footer class="my-footer">
-      <div class="row">
-        <div class="col-xs-3">
-
-        </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/g_footer.png" alt="" title="">
-        </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/r_footer.png" alt="" title="">
-        </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/p_footer.png" alt="" title="">
-        </div>
-         <div class="col-xs-3">
-
-        </div>
-      </div>
-      <div class="row" >
-          <div class="col-xs-12">
-              <p class="copyright text-xs-center">© 2016 <strong>Michelle Hiland</strong></a>. All Rights Reserved</p>
-          </div>
-      </div>
-
-	</footer>
-
-    </div> <!--end container -->
-
-
-  </body>
-</html>
+ {% endblock %}

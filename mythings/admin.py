@@ -44,13 +44,13 @@ class PostAdmin(admin.ModelAdmin):
 
 class ContactEntryAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None,               {'fields': [ 'message']}),
+        (None,               {'fields': ['message', 'email', 'name',]}),
         ('Date information', {'fields': ['created_date'], 'classes': ['collapse']}),
     ]
 
-    list_display = ( 'message',)
+    list_display = ('message', 'email', 'name')
     list_filter = ['created_date']
-    search_fields = ['message']
+    search_fields = ['email']
 
     actions = [export_as_json]
 

@@ -51,11 +51,19 @@ class Post(models.Model):
         ordering = ['-published_date']
 
 class ContactEntry(models.Model):
+   # email = models.EmailField()
+   # name = models.CharField(max_length=100)
     message = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.message
+
+   # def __str__(self):
+   #     return self.email
+
+    #def __str__(self):
+     #   return self.name
 
 
 class UserProfile(models.Model):
@@ -82,4 +90,3 @@ class Task(models.Model):
     completed = models.BooleanField(default=False)
     title = models.CharField(max_length=100)
     description = models.TextField()
-

@@ -1,129 +1,86 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags always come first -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-      <!-- Custom CSS -->
-      <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <!-- typography -->
-    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  </head>
-  <body>
-    <div class="container">
-      <nav class="navbar navbar-light navbar-full">
-        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-      <a href="#home"><img src="assets/img/logo.png"></a>
-      </button>
-      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-        <a id="logo-mobile" class="navbar-brand" href="#"><img id="logo-mobile" src="assets/img/logo.png"></a>
-        <ul class="nav navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="#">about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">portfolio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">testimonies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">contact</a>
-          </li>
-        </ul>
-        <ul id="social-right" class="nav navbar-nav">
-           <li class="nav-item">
-            <a id="social-mobile" class="nav-link social-fluid" href="https://github.com/mhiland247"><img id="social-mobile" class="social-fluid" src="assets/img/github.png"></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="https://www.linkedin.com/in/michelle-a-hiland-21bbba41"><img src="assets/img/linkedin.png"></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com/michelleahiland"><img src="assets/img/facebook.png"></a>
-          </li>
-           <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/michellehiland/"><img src="assets/img/instagram.png"></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+{% extends 'mythings/mysite/base.html' %}
+{% load staticfiles %}
+{% block content %}
 
     <!-- about section -->
        <!--about me section -->
-  <div class="row">
+  <div id="about-photos" class="row">
       <div class="col-xs-6 about-section">
-          <h2 class="about-section">About Me</h2>
-          <h4 class="h1-shrink">I am Front-End Developer and UX/UI Desinger from Colorado.</h4>
+          <div class="about-header">About Me</div>
+          <h4 class="h1-shrink about-padding">I am Front-End Developer and UX/UI Designer.</h4>
           <p class="text-mobile">I love creating single page web applications and crafting mobile first user interfaces.
             I am intimately aware of human centric design, cross browser compatibility issues, responsive design,
             and how to match javascript frameworks to client needs.</p>
-          <p>When I am not working I can be found outside trail running, biking, skiing, and ice skating.</p>
+          <!--<p class="text-mobile">When I am not working I can be found outside trail running, biking, skiing, and ice skating.</p>-->
           <!--<img class="img-fluid m-x-auto dblock hobbie-section" src="assets/img/hobbies.png">-->
-
 
       </div>
       <div class="col-xs-6">
-          <img class="img-fluid m-x-auto d-block about-section" src="assets/img/jump.png">
+          <img class="img-fluid mx-auto d-block about-section" src="{% static 'mythings/mysite/img/jump.png' %}">
       </div>
   </div><!--end row -->
 
-<div class="row card">
-    <div class="col-xs-3">
-          <img class="card-img-top" src="assets/img/working.jpg" alt="working">
-    </div>
-    <div class="col-xs-3">
-          <img class="card-img-top" src="assets/img/run.jpg" alt="working">
-    </div>
-    <div class="col-xs-3">
-          <img class="card-img-top" src="assets/img/biking.jpg" alt="working">
-    </div>
-    <div class="col-xs-3">
-          <img class="card-img-top" src="assets/img/skiing.jpg" alt="working">
-    </div>
-</div> <!--end row-->
-
-
-    <!--  Footer Section  -->
-	<footer class="my-footer">
-      <div class="row">
+   <div id="hobbies" class="row card">
+        <div class="col-xs-3 text-xs-center">
+              <img class="mx-auto d-block card-img-top" src="{% static 'mythings/mysite/img/working.jpg' %}" alt="working">
+        </div>
         <div class="col-xs-3">
-
+              <img class="card-img-top mx-auto d-block" src="{% static 'mythings/mysite/img/run.jpg' %}" alt="running">
         </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/g_footer.png" alt="" title="">
+        <div class="col-xs-3">
+              <img class="card-img-top mx-auto d-block" src="{% static 'mythings/mysite/img/biking.jpg' %}" alt="biking">
         </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/r_footer.png" alt="" title="">
+        <div class="col-xs-3">
+              <img class="card-img-top mx-auto d-block" src="{% static 'mythings/mysite/img/skiing.jpg' %}" alt="skiing">
         </div>
-        <div class="col-xs-2">
-            <img class="m-x-auto d-block" src="assets/img/p_footer.png" alt="" title="">
+    </div> <!--end row-->
+
+
+  <!--skills-->
+   <!--<div class="row">
+            <div class="col-sm-12 about-section">
+                <div class="about-header">Areas of Proficiency</div>
+            </div>
         </div>
-         <div class="col-xs-3">
 
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="card card-outline-secondary text-xs-center">
+              <div class="card-block">
+                <blockquote class="card-blockquote">
+			<h4>Skills</h4>
+                    <progress class="progress progress-striped progress-success" value="90" max="100"></progress>
+                    <p>HTML5, CSS3, SASS/Less, Bootstrap, JavaScript, jQuery, AngularJS, React.</p>
+			<h4>Patterns and Techniques</h4>
+                    <progress class="progress progress-striped progress-info" value="75" max="100"></progress>
+                    <p>Object Orientd Programming, MVC, Ajax, Django/python, Performance Optimization Techniques</p>
+                </blockquote>
+              </div>
+            </div>
         </div>
-      </div>
-      <div class="row" >
-          <div class="col-xs-12">
-              <p class="copyright text-xs-center">© 2016 <strong>Michelle Hiland</strong></a>. All Rights Reserved</p>
-          </div>
-      </div>
+         <div class="col-xs-6">
+            <div class="card card-outline-secondary text-xs-center">
+              <div class="card-block">
+                <blockquote class="card-blockquote">
+			<h4>Tools</h4>
+                    <progress class="progress progress-striped progress-warning" value="75" max="100"></progress>
+                    <p>Adobe Illustrator, Adobe InDesign, Adobe Photoshop, Adobe Acrobat, Envision</p>
+			<h4>Expertise</h4>
+                    <progress class="progress progress-striped progress-danger" value="95" max="100"></progress>
+                    <p>MySQL, postgreSQL, AWS, Git, Github, SEO on-page optimization</p>
+                </blockquote>
+              </div>
+            </div>
+        </div>-->
+ <!--   </div>--> <!-- end row --> 
 
-	</footer>
-	<!--  End Footer Section  -->
-  </div> <!-- end container -->
+ <!--hobbies
 
+  <div class="row">
+     <div class="col-sm-12 hobbie-section">
+          <h4 class="h1-shrink about-padding">Outdoor Enthusiast</h4>
+          <p class="text-mobile">When I am not working I can be found outside trail running, biking, skiing, and ice skating.</p>
+     </div>
+  </div>-->	
 
-
-
-    <!-- jQuery first, then Tether, then Bootstrap JS. -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js" integrity="sha384-VjEeINv9OSwtWFLAtmc4JCtEJXXBub00gtSnszmspDLCtC0I4z4nqz7rEFbIZLLU" crossorigin="anonymous"></script>
-  </body>
-</html>
+{% endblock %}

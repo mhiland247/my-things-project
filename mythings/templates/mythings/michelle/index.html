@@ -104,9 +104,15 @@
 			<div class="row">
 				<div class="col-sm-4 col-md-4 details animated wow fadeInDown"   data-wow-delay="0s">
 				{% if third_logo %}
-                                        {% for post in third_logo %}
-                                     <a class="link-portfolio" href="http://www.strangebyrds.com"><img class="img-responsive" src="{{post.get_image}}"></a>
-                                <a class="link-portfolio"href="www.strangebyrds.com">View Website</a>
+                                    {% for post in third_logo %}
+                                	<!--<div class="card">
+          					<img class="card-img-top img-fluid" src="{{post.get_image}}" alt="Card image cap">
+          					<div class="card-block">
+            					<a class="link-portfolio" href="http://www.strangebyrds.com"><h4 class="card-title card-responsive">Strangebyds</h4></a>
+            					<p class="card-text">Website Design</p>
+          				</div>-->   
+				 <a class="link-portfolio" href="http://www.strangebyrds.com"><img class="img-responsive" src="{{post.get_image}}"></a>
+                                <a class="link-portfolio" href="http://www.strangebyrds.com/">Developement</a>
                                  {% endfor %}
     
                                         {% else %}
@@ -127,9 +133,16 @@
 				</div>
 				<div class="col-sm-4 col-md-4 details animated wow fadeInDown"   data-wow-delay="1s">
 				 {% if first_logo %}
-                                        {% for post in first_logo %}
-                                     <a  class="link-portfolio" href="http://www.thingstheory.com/"><img class="img-responsive padding_tt" src="{{post.get_image}}"></a>
-					<a class="link-portfolio"href="www.strangebyrds.com">View Website</a>
+                                    {% for post in first_logo %}
+					<!--<div class="card">
+                                                <img class="card-img-top img-fluid padding_tt" src="{{post.get_image}}" alt="Card image cap">
+                                                <div class="card-block">
+                                                <a class="link-portfolio" href="http://www.thingstheory.com/"><h4 class="card-title card-responsive">Things Theory</h4></a>
+                                                <p class="card-text">Website Design</p>
+                                        </div>-->
+
+                                     <a class="link-portfolio" href="http://www.thingstheory.com/"><img class="img-responsive padding_tt" src="{{post.get_image}}"></a>
+				     <a class="link-portfolio" href="http://www.thingstheory.com/">Website Design</a>
                                 
 				 {% endfor %}
     

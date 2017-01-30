@@ -1,0 +1,28 @@
+{% extends 'mythings/angular/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-xs-2"></div>
+
+    <div ng-app="MyApp" class="col-xs-8">
+        <div ng-controller="passionsCtrl">
+             <div data-ng-repeat="p in passion" class="tag-border">
+                <a href=""> <div class="post-title"> {$ p.title $}</div></a>
+                <img class="img-responsive post-img" ng-src="{$ p.image $}">
+                <div class="image-date"> {$ p.image_date $}</div>
+                <div class="post-description"> {$ p.description $}</div>
+             </div>
+         </div>
+
+    <hr class="post-divider"></hr>
+
+   </div>
+
+  <div class="col-xs-2"></div>
+
+</div>
+
+{% endblock %}
