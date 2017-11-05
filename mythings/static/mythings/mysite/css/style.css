@@ -129,7 +129,7 @@ h4 {
 }
 
 #hobbies{
-  padding-bottom: 150px;
+  padding-top: 75px;
   border-style:none;
 }
 /*testimonial */
@@ -284,7 +284,7 @@ h4 {
 }
 
 .post-img {
-  width: 50%;
+  width: 75%!important;
   height: 25%;
   margin-right: auto;
   margin-left: auto;

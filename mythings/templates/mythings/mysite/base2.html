@@ -1,0 +1,76 @@
+{% load staticfiles %}
+{% load seo %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+    <!-- Bootstrap CSS -->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-flex.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-flex.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-grid.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/css/bootstrap-reboot.min.css' %}">
+     <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'mythings/mysite/css/style.css' %}">
+     <!-- typography -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'mythings/mysite/bootstrap-4.0.0-alpha.5-dist/js/bootstrap.js' %}"></script>
+
+
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-light navbar-full">
+        <button class="navbar-toggler hidden-sm-up" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+            <a href="{% url 'mythings.views.vitality' %}"><img id="toggle-img" src="{% static 'mythings/mysite/img/logo_passions.png' %}"></a>
+        </button>
+      <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+        <a id="logo-mobile" class="navbar-brand"><img id="logo-nav" src="{% static 'mythings/mysite/img/logo_passions.png' %}"></a>
+      </div>
+    </nav>
+
+        {% block content %}
+        {% endblock %}
+
+ <!--  Footer Section  -->
+        <footer class="my-footer">
+          <div class="row" >
+              <div class="col-xs-12">
+                  <p class="text-xs-center copyright">© 2017 <strong>Michelle Hiland</strong>. All Rights Reserved.</p>
+              </div>
+          </div>
+
+        </footer>
+	<!--  End Footer Section  -->
+    </div> <!-- end container -->
+        <script type="text/javascript" src="{% static 'mythings/mysite/js/main.js' %}"></script>
+        <script src="{% static 'mythings/mysite/js/contact.js' %}"></script>
+
+	<script>
+  	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  	ga('create', 'UA-55212668-2', 'auto');
+  	ga('send', 'pageview');
+
+        </script>
+  </body>
+</html>

@@ -21,10 +21,41 @@ from rest_framework.views import APIView
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view
 
-from .models import Post, Tag, UserProfile, Lead, ContactEntry
+from .models import Post, Tag, UserProfile, Lead, ContactEntry, Blog, Photo
 from .forms import UserForm, UserProfileForm
 from .serializers import UserSerializer, ThingsSerializer, TasksSerializer, LeadSerializer, PortfolioSerializer
 # Create your views here.
+
+"""Vitality Site"""
+def vitality(request):
+    return render(request, 'mythings/vitality/creative.html')
+
+@requires_csrf_token
+def new_contact(request):
+    if request.method == 'POST':
+        contact_text = request.POST.get('the_message')
+        #lead_email = request.POST.get('the_email')
+        #lead_name = request.POST.get('the_name')
+        response_data = {}
+
+        contact = ContactEntry(message=contact_text, created_date=timezone.now())
+        contact.save()
+
+        response_data['result'] = 'Thank you for your interest, I will be in touch soon!'
+        #response_data['name'] = contact.name
+        #response_data['email'] = contact.email
+        response_data['message'] = contact.message
+        response_data['created_date'] = contact.created_date.strftime('%B %d, %Y')
+
+        return HttpResponse(
+            json.dumps(response_data),
+            content_type="application/json"
+        )
+    else:
+        return HttpResponse(
+            json.dumps({"nothing to see": "this isn't happening"}),
+            content_type="application/json"
+        )
 
 """Angular.js"""
 def angular(request):
@@ -129,6 +160,36 @@ def tag_list(request, tag=None): #browser sends request for page, django receive
         tag = "Blog"
     return render(request, 'mythings/mysite/passions.html', {'posts': posts, 'tag': tag.title()})
     #return render(request, 'mythings/michelle/tag_list.html', {'posts': posts, 'tag': tag.title()}) //oldsite
+
+# adding blog for all things tech
+@csrf_protect
+def add_blogs(request):
+    if request.method == "POST": #if the form has been submitted
+        post = Blog() #assign variable to model
+        post.header = request.POST['header'] #field bound to POST data
+        post.content = request.POST['content']
+        post.publisheer = request.user
+        post.created_on = timezone.now()
+        post.tag = request.POST['tag']
+        post.photo.save(request.FILES['get_photo'].name, request.FILES['get_photo'])
+        p = post.photo
+        for i in p:
+            photo, uploaded = Photo.objects.get_or_create(photo=i.strip())
+            post.photos.add(photo)
+        t = post.tag.split(', ')
+        for i in t:
+            tag, created = Tag.objects.get_or_create(tag=i.strip())
+            post.tags.add(tag)
+        post.save()
+        return redirect('mythings.views.blog_detail', post.pk)
+    else:
+        post = Blog()
+    return render(request, 'mythings/mysite/tech_blog.html', {'post': post})
+
+def blog_detail(request, name):
+    for post in Blog.objects.all():
+        if post.url_name == name:
+            return render(request, 'mythings/michelle/post_detail.html', {'post': post})
 
 @requires_csrf_token
 def lead(request):

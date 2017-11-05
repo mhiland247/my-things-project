@@ -13,12 +13,15 @@ router.register(r'passions', views.PassionViewSet)
 urlpatterns = [
     # django normal urls
     url(r'^home/$', views.index, name='index'),
+    # vitality site
+    url(r'^$', views.vitality, name='vitality'),
+    url(r'^new_contact/$', views.new_contact, name='new_contact'),
     #new site
-    url(r'^$', views.home, name='home'),
-    url(r'^about/$', views.about, name='about'),
-    url(r'^portfolio/$', views.portfolio, name='portfolio'),
-    url(r'^contact/$', views.contact, name='contact'),
-    url(r'^contact_lead/$', views.contact_lead, name='contact_lead'),
+    #url(r'^mysite/$', views.home, name='home'),
+    #url(r'^about/$', views.about, name='about'),
+    #url(r'^portfolio/$', views.portfolio, name='portfolio'),
+    #url(r'^contact/$', views.contact, name='contact'),
+    #url(r'^contact_lead/$', views.contact_lead, name='contact_lead'),
     #url(r'post/(?P<pk>[0-9]+)/$', views.post_detail, name='post_detail'),
     url(r'post/(?P<name>.*)$', views.post_detail_name, name='post_detail_name'),
     url(r'add/posts/$', views.add_posts, name='add_posts'),
