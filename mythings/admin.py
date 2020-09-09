@@ -6,6 +6,7 @@ from django.http import HttpResponse
 from djangoseo.admin import register_seo_admin
 from .seo import MyMetadata
 
+register_seo_admin(admin.site, MyMetadata)
 
 # Register your models here.
 #admin.site.register(MyMetadata)

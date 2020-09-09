@@ -27,7 +27,7 @@ from .serializers import UserSerializer, ThingsSerializer, TasksSerializer, Lead
 # Create your views here.
 
 """Vitality Site"""
-def vitality(request):
+def blog(request):
     return render(request, 'mythings/vitality/creative.html')
 
 @requires_csrf_token

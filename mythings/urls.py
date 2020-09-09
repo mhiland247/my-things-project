@@ -14,8 +14,9 @@ urlpatterns = [
     # django normal urls
     url(r'^home/$', views.index, name='index'),
     # vitality site
-    url(r'^$', views.vitality, name='vitality'),
+    url(r'^$', views.blog, name='blog'),
     url(r'^new_contact/$', views.new_contact, name='new_contact'),
+    #url(r'^campaign/$', views.campaign, name='campaign'),
     #new site
     #url(r'^mysite/$', views.home, name='home'),
     #url(r'^about/$', views.about, name='about'),
